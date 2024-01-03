@@ -1,0 +1,48 @@
+@import '#archichecture/pages/table_page/variables.scss';
+@import '#main-styles/variables';
+.wrapper{
+  width: 80vw;
+  height: 80vw;
+  border-radius: .5rem;
+  
+  display: grid;
+  
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: .25rem;
+  grid-row-gap: .25rem;
+}
+
+.elem{
+  border: 2px solid rgb(255, 134, 247);
+  border-radius: .5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+@media(min-width:$size-flex-direction){
+  .wrapper{
+    order: 1;
+  }
+}
+
+@media (min-width: $S){
+  .wrapper{
+    width: 60vw;
+    height: 60vw;
+}
+}
+
+@media (min-width: $L){
+  .wrapper{
+  width: 50vw;
+  height: 50vw;
+}
+}
+
+@media (min-width: $XL){
+  .wrapper{
+  width: 40vw;
+  height: 40vw;
+}
+}

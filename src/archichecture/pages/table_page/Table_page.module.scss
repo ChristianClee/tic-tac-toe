@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+.wrapper{
+  margin-top: 1rem;
+}
+.flexCont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem
+}
+
+  
+
+
+@media(min-width: $size-flex-direction){
+  .flexCont{
+    flex-direction:row;
+  }
+}

@@ -1,26 +1,30 @@
+import { useReducer } from 'react';
+import Background from '#archichecture/component/background/Background';
+import Table_page from '#archichecture/pages/table_page/Table_page';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { GameContext } from "#reducers/context"
+import { TicTacReducer } from './reducers/reduser'
+import { initialGameState } from './reducers/state'
 
-function App() {
+
+
+const App: React.FC = () => {
+ 
+  const [state, dispatch] = useReducer(TicTacReducer, initialGameState)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GameContext.Provider value={{state, dispatch}}>
+      <div className="App">
+        <Table_page/>
+        {/* <Background/> */}
+      </div>
+    </GameContext.Provider>
+      
+
+    
   );
 }
 
 export default App;
+
+

@@ -1,0 +1,20 @@
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translateX(-50%) translateY(-50%);
+  fill: rgb(255, 203, 83);
+  animation: moving 3s linear infinite alternate 0s forwards;
+}
+
+  
+
+
+@keyframes moving{
+   0%{top: 45%}
+  25%{left: 53%}
+  50%{top: 54%}
+  75%{left: 45%}
+}
