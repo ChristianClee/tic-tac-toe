@@ -1,5 +1,5 @@
 import { Sell_I } from '#reducers/state'
-import {Cross_T, Zerro_T , CROSS, ZERRO} from '#constants/tic-tac-toe-base-answer/constNames'
+import { Winner_E } from "#constants/tic-tac-toe-base-answer/constNames";
 
 // const arr: number[][] = [
   // it is winning combinations
@@ -12,9 +12,11 @@ import {Cross_T, Zerro_T , CROSS, ZERRO} from '#constants/tic-tac-toe-base-answe
 //   [0, 4, 8],/
 //   [2, 4, 6], /
 // ];
+// const Winner_E.CROSS = Winner_E.Winner_E.CROSS
+// const Winner_E.ZERRO = Winner_E.Winner_E.ZERRO
 
 export type TestData_T = {
-  answer: null | Cross_T | Zerro_T;
+  answer: null | Winner_E;
   discribe: string;
   request: Sell_I[];
 };
@@ -51,7 +53,7 @@ export const testDateTrue: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[0, 1, 2]",
     request: [
       //   [0, 1, 2]
@@ -67,7 +69,7 @@ export const testDateTrue: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[3, 4, 5]",
     request: [
       //   [3, 4, 5]
@@ -83,7 +85,7 @@ export const testDateTrue: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[6, 7, 8]",
     request: [
       //   [6, 7, 8]
@@ -99,7 +101,7 @@ export const testDateTrue: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[0, 3, 6]",
     request: [
       //   [0, 3, 6]
@@ -115,7 +117,7 @@ export const testDateTrue: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[1, 4, 7]",
     request: [
       // [1, 4, 7]
@@ -131,7 +133,7 @@ export const testDateTrue: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[2, 5, 8]",
     request: [
       //  [2, 5, 8]
@@ -147,7 +149,7 @@ export const testDateTrue: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[0, 4, 8]",
     request: [
       //   [0, 4, 8]
@@ -163,7 +165,7 @@ export const testDateTrue: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[2, 4, 6]",
     request: [
       // [2, 4, 6]
@@ -182,7 +184,7 @@ export const testDateTrue: TestData_T[] = [
 
 export const testDateFalse: TestData_T[] = [
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[0, 1, 2]",
     request: [
       //   [0, 1, 2]
@@ -198,7 +200,7 @@ export const testDateFalse: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[3, 4, 5]",
     request: [
       //   [3, 4, 5]
@@ -214,7 +216,7 @@ export const testDateFalse: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[6, 7, 8]",
     request: [
       //   [6, 7, 8]
@@ -230,7 +232,7 @@ export const testDateFalse: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[0, 3, 6]",
     request: [
       //   [0, 3, 6]
@@ -246,7 +248,7 @@ export const testDateFalse: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[1, 4, 7]",
     request: [
       // [1, 4, 7]
@@ -262,7 +264,7 @@ export const testDateFalse: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[2, 5, 8]",
     request: [
       //  [2, 5, 8]
@@ -278,7 +280,7 @@ export const testDateFalse: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[0, 4, 8]",
     request: [
       //   [0, 4, 8]
@@ -294,7 +296,7 @@ export const testDateFalse: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[2, 4, 6]",
     request: [
       // [2, 4, 6]
@@ -313,7 +315,7 @@ export const testDateFalse: TestData_T[] = [
 
 export const testDateMixed: TestData_T[] = [
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[0, 1, 2]=false, [4, 8]=true",
     request: [
       //   [0, 1, 2]
@@ -329,7 +331,7 @@ export const testDateMixed: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[3, 1, 4, 5, 2 ]=true, [0, 8, 7, 1]=false",
     request: [
       //   [3, 4, 5]
@@ -345,7 +347,7 @@ export const testDateMixed: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[6, 4, 7, 8]=false, [0, 2, 5]=true",
     request: [
       //   [6, 7, 8]
@@ -361,7 +363,7 @@ export const testDateMixed: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[0, 1, 3, 6]=true, [5, 8, 1]=false",
     request: [
       //   [0, 3, 6]
@@ -377,7 +379,7 @@ export const testDateMixed: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[1, 4, 7]=false, [0, 6, 7]=true",
     request: [
       // [1, 4, 7]
@@ -393,7 +395,7 @@ export const testDateMixed: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[2, 5, 8]=true, [0, 1, 7]=false",
     request: [
       //  [2, 5, 8]
@@ -409,7 +411,7 @@ export const testDateMixed: TestData_T[] = [
     ],
   },
   {
-    answer: CROSS,
+    answer: Winner_E.CROSS,
     discribe: "[0, 4, 8]=true, [1, 5, 7]=false",
     request: [
       //   [0, 4, 8]
@@ -425,7 +427,7 @@ export const testDateMixed: TestData_T[] = [
     ],
   },
   {
-    answer: ZERRO,
+    answer: Winner_E.ZERRO,
     discribe: "[2, 4, 6]=false, [1,7,8]=true",
     request: [
       // [2, 4, 6]

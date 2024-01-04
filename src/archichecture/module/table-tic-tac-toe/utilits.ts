@@ -1,23 +1,23 @@
 import { Sell_I } from '#reducers/state'
 import { threeToThree } from "#constants/tic-tac-toe-base-answer/3_to_3_answer";
-import { CROSS, ZERRO, Cross_T, Zerro_T} from "#constants/tic-tac-toe-base-answer/constNames";
+import { fiveToFive } from "#constants/tic-tac-toe-base-answer/5_to_5_answer";
+import { Winner_E } from "#constants/tic-tac-toe-base-answer/constNames";
+import { Tic_tac_modes_E } from "#constants/tic-tac-toe-base-answer/constNames";
 
 
 
-
-
-export type Winner_T = Cross_T | Zerro_T | null;
 
 export class Utilits {
   static getArrCount(bool: boolean, arr: Sell_I[]): number[] {
     // it returns array from numbers that are accordining type === <bool>
-    return arr.filter((elem) => elem.type === bool)
-      .map((elem) => elem.index);
+    return arr.filter((elem) => elem.type === bool).map((elem) => elem.index);
   }
 
-  static getIsintersection(arr: number[]): boolean {
+  static getIsintersection(arr: number[], mainArr: number[][]): boolean {
+    // it check is arr consisted from values in 'threeToThree', it's main process
+
     let result: boolean = false;
-    threeToThree.forEach((item: number[]) => {
+    mainArr.forEach((item: number[]) => {
       let innerResult: boolean[] = [];
 
       item.forEach((elem: number) => {
@@ -31,17 +31,39 @@ export class Utilits {
     return result;
   }
 
-  static getWinner(arr: Sell_I[]): Winner_T {
-    //arr is array containing from objects, each object has type which 
+  static returnWiner(arg_1: boolean, arg_2: boolean): Winner_E | null {
+    if (arg_1) return Winner_E.CROSS;
+    else if (arg_2) return Winner_E.ZERRO;
+    else return null;
+  }
+
+  static getTwoVariant(arrTrue: number[], arrFalse: number[], mode: Tic_tac_modes_E) {
+     let isTrueInBase;
+     let isFalseInBase;
+    if (mode === Tic_tac_modes_E.ONE) {
+      isTrueInBase = this.getIsintersection(arrTrue, threeToThree);
+      isFalseInBase = this.getIsintersection(arrFalse, threeToThree);
+    } else {
+      isTrueInBase = this.getIsintersection(arrTrue, fiveToFive);
+      isFalseInBase = this.getIsintersection(arrFalse, fiveToFive);
+    }
+    return { isTrueInBase, isFalseInBase };
+  }
+
+  static getWinner(arr: Sell_I[], mode: Tic_tac_modes_E): Winner_E | null {
+    //arr is array containing from objects, each object has type which
     // is <true> or <false> and they mean 'cross' or 'zerro' accordingly
 
     const arrTrue = this.getArrCount(true, arr);
     const arrFalse = this.getArrCount(false, arr);
-    const isTrueInBase = this.getIsintersection(arrTrue);
-    const isFalseInBase = this.getIsintersection(arrFalse);
+    const { isTrueInBase, isFalseInBase } = this.getTwoVariant(
+      arrTrue,
+      arrFalse,
+      mode
+    );
+   
+    
 
-    if (isTrueInBase) return CROSS 
-    else if (isFalseInBase) return ZERRO
-    else return null
+    return this.returnWiner(isTrueInBase, isFalseInBase);
   }
 }

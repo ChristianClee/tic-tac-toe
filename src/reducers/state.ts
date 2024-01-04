@@ -1,6 +1,7 @@
 //this workin belong to Ilya Mishkov, I make english comments for training my writing skills it is reason why do I do this
-
+import { Tic_tac_modes_E, Count_sells_E } from '#constants/tic-tac-toe-base-answer/constNames'
 import { Utilits } from '#commonUtilits/utilits'
+
 
 export interface Sell_I {
   key: string; // it is unique value that was generated via Math.random module
@@ -10,7 +11,7 @@ export interface Sell_I {
 
 
 export interface Mode_I {
-  currentGame: number; // it shows current mode of game, at this moment the aviable modes are 3 to 3 sells, 4 to 4, 5 to 5 
+  currentGame: Tic_tac_modes_E; // it shows current mode of game, at this moment the aviable modes are 3 to 3 sells, 5 to 5
   sells: Sell_I[];
 }
 export interface Game_I extends Mode_I {
@@ -20,7 +21,7 @@ export interface Game_I extends Mode_I {
 
 
 export const initialGameState: Game_I = {
-  currentGame: 0,
-  sells: Utilits.getSellsArr(9),
+  currentGame: Tic_tac_modes_E.ONE,
+  sells: Utilits.getSellsArr(Count_sells_E.oneMode),
   typeMarker: true,
 };

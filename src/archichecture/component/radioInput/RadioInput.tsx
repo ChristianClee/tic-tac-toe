@@ -4,12 +4,12 @@ import { GameContext } from '#reducers/context'
 import { useContext } from 'react';
 import { ActionType_E } from '#reducers/actions'
 import { Utilits } from './utilits'
-
+import { Tic_tac_modes_E } from '#constants/tic-tac-toe-base-answer/constNames'
 
 type PropsT = {
   text: string;
-  index: number;
-  modeGame: number;
+  index: Tic_tac_modes_E;
+  modeGame: Tic_tac_modes_E;
 }
 
 const RadioInput: React.FC<PropsT> = ({ text, index, modeGame }) => {

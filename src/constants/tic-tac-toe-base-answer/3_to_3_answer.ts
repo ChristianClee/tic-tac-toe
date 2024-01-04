@@ -1,3 +1,5 @@
+import { getSortList } from './utilits'
+
 const arr: number[][] = [
   [0, 1, 2],
   [3, 4, 5],
@@ -9,7 +11,4 @@ const arr: number[][] = [
   [2, 4, 6]
 ]
 
-export const threeToThree: number[][] = arr.map(item => {
-  const sortItem = item.sort((one, two) => one - two);
-  return sortItem;
-})
+export const threeToThree = getSortList(arr);
