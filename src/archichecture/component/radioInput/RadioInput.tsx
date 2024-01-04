@@ -11,10 +11,11 @@ type PropsT = {
   index: number;
   modeGame: number;
 }
-const RadioInput: React.FC<PropsT> = ({ text, index,  modeGame }) => {
+
+const RadioInput: React.FC<PropsT> = ({ text, index, modeGame }) => {
   const { dispatch } = useContext(GameContext)
   const result:boolean = index === modeGame
-
+  
 
   return (
     <div className={style.wrapper}>
@@ -25,7 +26,7 @@ const RadioInput: React.FC<PropsT> = ({ text, index,  modeGame }) => {
         onClick={() => {
           dispatch({
             type: ActionType_E.ChengeGame,
-            payload: { currentGame:index, countSells: Utilits.getCount(index)}
+            payload: { currentGame:index, sells: Utilits.getCount(index)}
           }) }}
       >
         {

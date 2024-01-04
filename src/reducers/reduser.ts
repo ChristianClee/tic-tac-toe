@@ -9,7 +9,7 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
       return {
         ...state,
         currentGame: action.payload.currentGame,
-        countSells: action.payload.countSells,
+        sells: action.payload.sells,
       };
     
     case ActionType_E.SetMarker:
@@ -17,6 +17,14 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
         ...state,
         typeMarker: !state.typeMarker
       };
+    
+    case ActionType_E.SetMarkerItem: 
+      return {
+        ...state,
+        sells: action.payload,
+      };
+    
+  
     
     default:
       return state

@@ -14,8 +14,8 @@ const ChoiceMode: React.FC<PropsT> = () => {
   return (
     <div className={style.wrapper}>
       <RadioInput text={"3 to 3"} index={0} modeGame={state.currentGame} />
-      <RadioInput text={"4 to 4"} index={1} modeGame={state.currentGame} />
-      <RadioInput text={"5 to 5"} index={2} modeGame={state.currentGame} />
+      {/* <RadioInput text={"4 to 4"} index={1} modeGame={state.currentGame} /> */}
+      <RadioInput text={"5 to 5"} index={1} modeGame={state.currentGame} />
     </div>
   );
 }

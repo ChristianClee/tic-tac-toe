@@ -5,22 +5,25 @@ import { ActionType_E } from '#reducers/actions'
 import { useContext } from 'react';
 import TheChest from '#archichecture/ui/theChest/TheChest';
 import TheNull from '#archichecture/ui/theNull/TheNull';
+import { Sell_I } from '#reducers/state'
+import { Utilits } from './utilits'
 
 type PropsT = {
-  index: number
+  item: Sell_I
 }
-const TheSell: React.FC<PropsT> = ({ index }) => {
-
-  const [typeMarker, setTypeMarker] = useState<boolean | null>(null)
+const TheSell: React.FC<PropsT> = ({ item }) => {
   const { state, dispatch } = useContext(GameContext)
 
   return (
     <div
       className={style.wrapper}
-      style={{ color: 'white' }}
       onClick={(e) => {
-        if (typeMarker === null) {
-          setTypeMarker(state.typeMarker)
+        if (item.type === null) {
+          dispatch({
+            type: ActionType_E.SetMarkerItem,
+            payload: Utilits
+              .getNewSells(state.sells, item.key, state.typeMarker)
+          })
           dispatch({
             type: ActionType_E.SetMarker
           })
@@ -28,10 +31,10 @@ const TheSell: React.FC<PropsT> = ({ index }) => {
       }}
     >
       {
-        typeMarker === true ?
+       item.type === true ?
           <TheChest />
           :
-          typeMarker === false ?
+          item.type === false ?
             <TheNull />
             :
             null

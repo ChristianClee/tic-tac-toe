@@ -1,17 +1,30 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './TicTacToe.module.scss';
 import { GameContext } from '#reducers/context';
 import { useContext } from 'react';
 import TheSell from '#archichecture/component/theSell/TheSell';
- 
+import { Utilits } from './utilits';
+
+
 
 type Props = {
 }
 
 const TicTacToe: React.FC<Props> = () => {
   const { state } = useContext(GameContext)
-  const rows = Math.sqrt(state.countSells)
-  // const [typeMarker, setTypeMarker] = useState<boolean>(true)
+  const rows = Math.sqrt(state.sells.length)
+  useEffect(() => {
+
+    if (state.currentGame === 0) {
+      const win = Utilits.getWinner(state.sells)
+      // console.log(win)
+
+
+      
+    } else if (state.currentGame === 1) {
+      
+    }
+  },[state.sells])
 
   return (
      <div
@@ -22,12 +35,12 @@ const TicTacToe: React.FC<Props> = () => {
         }}
       >
         {
-          Array(state.countSells).fill('').map((item, index) => {
+          state.sells.map((item) => {
             return <div
               className={style.elem}
-              key={index}
+              key={item.key}
             >
-              <TheSell key={index} index={ index } />
+              <TheSell key={item.key} item={ item } />
               
             </div>
           })
