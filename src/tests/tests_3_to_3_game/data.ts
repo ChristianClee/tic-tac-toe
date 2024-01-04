@@ -1,8 +1,8 @@
-import { Sell_I } from '#reducers/state'
-import { Winner_E } from "#constants/tic-tac-toe-base-answer/constNames";
+import { Sell_I } from "#reducers/state";
+import { Winner_E } from "#constants/tic-tac-toe-base/constNames";
 
 // const arr: number[][] = [
-  // it is winning combinations
+// it is winning combinations
 //   [0, 1, 2],/
 //   [3, 4, 5],/
 //   [6, 7, 8],/

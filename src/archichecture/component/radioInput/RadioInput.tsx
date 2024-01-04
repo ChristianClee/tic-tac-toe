@@ -4,7 +4,7 @@ import { GameContext } from '#reducers/context'
 import { useContext } from 'react';
 import { ActionType_E } from '#reducers/actions'
 import { Utilits } from './utilits'
-import { Tic_tac_modes_E } from '#constants/tic-tac-toe-base-answer/constNames'
+import { Tic_tac_modes_E } from '#constants/tic-tac-toe-base/constNames'
 
 type PropsT = {
   text: string;

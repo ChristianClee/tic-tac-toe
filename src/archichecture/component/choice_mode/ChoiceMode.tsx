@@ -3,7 +3,7 @@ import style from './ChoiceMode.module.scss'
 import RadioInput from '#archichecture/component/radioInput/RadioInput';
 import { useContext } from 'react';
 import { GameContext } from '../../../reducers/context'
-import { Tic_tac_modes_E } from '#constants/tic-tac-toe-base-answer/constNames'
+import { Tic_tac_modes_E } from '#constants/tic-tac-toe-base/constNames'
 
 type PropsT = {
 

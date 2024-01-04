@@ -1,5 +1,5 @@
-import { Utilits } from '#archichecture/module/table-tic-tac-toe/utilits';
-import { Tic_tac_modes_E } from "#constants/tic-tac-toe-base-answer/constNames";
+import { Utilits } from "#archichecture/module/table-tic-tac-toe/utilits";
+import { Tic_tac_modes_E } from "#constants/tic-tac-toe-base/constNames";
 import {
   testDateTrue,
   testDateFalse,
@@ -7,11 +7,7 @@ import {
   testDateNull,
 } from "./data";
 
-
-
-
-
-describe('test 3 to 3 table', () => {
+describe("test 3 to 3 table", () => {
   testDateTrue.forEach((item) => {
     test(`${item.discribe} - ${item.answer}`, () => {
       expect(Utilits.getWinner(item.request, Tic_tac_modes_E.ONE)).toBe(
@@ -40,6 +36,4 @@ describe('test 3 to 3 table', () => {
       );
     });
   });
-
-})
-
+});

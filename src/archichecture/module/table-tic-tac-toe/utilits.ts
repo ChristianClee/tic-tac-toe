@@ -1,11 +1,8 @@
-import { Sell_I } from '#reducers/state'
-import { threeToThree } from "#constants/tic-tac-toe-base-answer/3_to_3_answer";
-import { fiveToFive } from "#constants/tic-tac-toe-base-answer/5_to_5_answer";
-import { Winner_E } from "#constants/tic-tac-toe-base-answer/constNames";
-import { Tic_tac_modes_E } from "#constants/tic-tac-toe-base-answer/constNames";
-
-
-
+import { Sell_I } from "#reducers/state";
+import { threeToThree } from "#constants/tic-tac-toe-base/3_to_3_answer";
+import { fiveToFive } from "#constants/tic-tac-toe-base/5_to_5_answer";
+import { Winner_E } from "#constants/tic-tac-toe-base/constNames";
+import { Tic_tac_modes_E } from "#constants/tic-tac-toe-base/constNames";
 
 export class Utilits {
   static getArrCount(bool: boolean, arr: Sell_I[]): number[] {
@@ -37,9 +34,13 @@ export class Utilits {
     else return null;
   }
 
-  static getTwoVariant(arrTrue: number[], arrFalse: number[], mode: Tic_tac_modes_E) {
-     let isTrueInBase;
-     let isFalseInBase;
+  static getTwoVariant(
+    arrTrue: number[],
+    arrFalse: number[],
+    mode: Tic_tac_modes_E
+  ) {
+    let isTrueInBase;
+    let isFalseInBase;
     if (mode === Tic_tac_modes_E.ONE) {
       isTrueInBase = this.getIsintersection(arrTrue, threeToThree);
       isFalseInBase = this.getIsintersection(arrFalse, threeToThree);
@@ -61,8 +62,6 @@ export class Utilits {
       arrFalse,
       mode
     );
-   
-    
 
     return this.returnWiner(isTrueInBase, isFalseInBase);
   }
