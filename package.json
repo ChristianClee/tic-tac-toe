@@ -49,5 +49,11 @@
   "devDependencies": {
     "husky": "^8.0.3",
     "sass": "^1.69.6"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "#(.*)": "<rootDir>/src/$1"
   }
+  }
+
 }
