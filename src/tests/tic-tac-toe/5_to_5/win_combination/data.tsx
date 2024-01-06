@@ -1,14 +1,14 @@
-import { TestData_T } from "../types";
-import { Winner_E } from "#constants/tic-tac-toe-base/constNames";
+import { TestCombination_T } from "../../types";
+import { Winner_E, Tic_tac_modes_E } from "#constants/tic-tac-toe-base/constNames";
 
 
 
-
-export const testDateMixed: TestData_T[] = [
+export const winCombinztion: TestCombination_T[] = [
   {
-    answer: Winner_E.CROSS,
+    answer: [0,1,2,3],
     discribe: "[0, 1, 2, 3]=true, [4, 9, 14]=false",
-    request: [
+    request: {
+      arr:  [
       //   [0, 1, 2, 3],
       { key: "1", index: 0, type: true }, //
       { key: "1", index: 1, type: true }, //
@@ -35,13 +35,19 @@ export const testDateMixed: TestData_T[] = [
       { key: "1", index: 22, type: null },
       { key: "1", index: 23, type: null },
       { key: "1", index: 24, type: null },
-    ],
+      ],
+      mode: Tic_tac_modes_E.TWO,
+      win:Winner_E.CROSS
+    },
+
   },
   {
-    answer: Winner_E.CROSS,
+    answer: [5, 11, 17, 23],
     discribe:
       "[23, 5, 7, 11, 8, 12, 17, 19]=true, [0, 1, 4, 9, 14, 15, 16, 20]=false",
-    request: [
+    request:
+    {
+        arr:  [
       //   [5, 11, 17, 23],
       { key: "1", index: 23, type: true }, //
       { key: "1", index: 0, type: false },
@@ -68,13 +74,18 @@ export const testDateMixed: TestData_T[] = [
       { key: "1", index: 21, type: null },
       { key: "1", index: 22, type: null },
       { key: "1", index: 24, type: null },
-    ],
+      ],
+      mode: Tic_tac_modes_E.TWO,
+      win:Winner_E.CROSS
+      },
+     
   },
   {
-    answer: Winner_E.ZERRO,
+    answer: [3, 8, 13, 18],
     discribe: "[18, 3, 7, 9, 13, 8 ]=false, [11, 1, 4, 10, 16, 20, 23]=true",
-    request: [
-      //   3, 8, 13, 18,
+    request: {
+      arr: [
+      //   [3, 8, 13, 18]
       { key: "1", index: 11, type: true },
       { key: "1", index: 18, type: false }, //
       { key: "1", index: 0, type: null },
@@ -100,12 +111,17 @@ export const testDateMixed: TestData_T[] = [
       { key: "1", index: 22, type: null },
       { key: "1", index: 23, type: true },
       { key: "1", index: 24, type: null },
-    ],
+      ],
+      win: Winner_E.ZERRO,
+      mode: Tic_tac_modes_E.TWO
+    },
+    
   },
   {
-    answer: null,
+    answer: [],
     discribe: "[0,2,4,6,7,11,13,14,15,16,19,22,23]=true, [1,3,5,8,9,10,12,17,18,20,21,24]=false",
-    request: [
+    request: {
+      arr:  [
       //   [],
       { key: "1", index: 0, type: true }, 
       { key: "1", index: 1, type: false}, 
@@ -132,6 +148,11 @@ export const testDateMixed: TestData_T[] = [
       { key: "1", index: 22, type: true },
       { key: "1", index: 23, type: true },
       { key: "1", index: 24, type: false},
-    ],
+      ],
+      mode: Tic_tac_modes_E.TWO,
+      win:Winner_E.CROSS
+    },
+   
   },
 ];
+

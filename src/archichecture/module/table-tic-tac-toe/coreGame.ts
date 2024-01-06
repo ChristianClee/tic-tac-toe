@@ -10,29 +10,15 @@ export class Utilits {
   }
 
   static getIsintersection(arr: number[], mainArr: number[][]): boolean {
-    //!!! 1 THIS FUNCTIONS HAVE MORE SIMILAR CODE, IT NEEDS TO REFACTORING
     // it check is arr consisted from values in 'threeToThree', it's main process
-
-    let result: boolean = false;
-    mainArr.forEach((item: number[]) => {
-      let innerResult: boolean[] = [];
-
-      item.forEach((elem: number) => {
-        innerResult.push(arr.includes(elem));
-      });
-
-      if (innerResult.every((i) => i === true)) {
-        result = true;
-      }
-    });
-    return result;
+    const winArr = this.getWinArr(arr, mainArr);
+    if (winArr.length) return true
+    else return false
   }
 
-  static getIntersectionArr(arr: number[], mainArr: number[][]): number[] {
-    //!!! 1 THIS FUNCTIONS HAVE MORE SIMILAR CODE, IT NEEDS TO REFACTORING
+  static getWinArr( arr: number[], mainArr: number[][]) {
     let result: number[] = [];
     mainArr.forEach((item: number[]) => {
-      console.log(item.length)
       let innerResult: boolean[] = [];
 
       item.forEach((elem: number) => {
@@ -88,6 +74,7 @@ export class Utilits {
     winner: Winner_E | null,
     mode: Tic_tac_modes_E
   ): void | number[] {
+
     let arrUser: number[];
     let arrMain: number[][];
     if (winner === Winner_E.CROSS) {
@@ -101,7 +88,7 @@ export class Utilits {
     } else {
       arrMain = fiveToFive;
     }
-    
-    return this.getIntersectionArr(arrUser, arrMain);
+
+    return this.getWinArr(arrUser, arrMain);
   }
 }

@@ -7,7 +7,7 @@ import {
   testDateNull,
 } from "./data";
 
-describe("tic-tac-toe, test 3 to 3 table", () => {
+describe("tic-tac-toe, test 3 to 3 table, winner result", () => {
   testDateCROSS.forEach((item) => {
     test(`${item.discribe} - ${item.answer}`, () => {
       expect(Utilits.getWinner(item.request, Tic_tac_modes_E.ONE)).toBe(

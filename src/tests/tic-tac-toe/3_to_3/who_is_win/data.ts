@@ -1,4 +1,4 @@
-import { TestData_T } from "../types";
+import { TestWinner_T } from "../../types";
 import { Winner_E } from "#constants/tic-tac-toe-base/constNames";
 
 // const arr: number[][] = [
@@ -13,7 +13,7 @@ import { Winner_E } from "#constants/tic-tac-toe-base/constNames";
 //   [2, 4, 6], /
 // ];
 
-export const testDateCROSS: TestData_T[] = [
+export const testDateCROSS: TestWinner_T[] = [
   {
     answer: Winner_E.CROSS,
     discribe: "[0, 1, 2]",
@@ -144,7 +144,7 @@ export const testDateCROSS: TestData_T[] = [
   },
 ];
 
-export const testDateZERRO: TestData_T[] = [
+export const testDateZERRO: TestWinner_T[] = [
   {
     answer: Winner_E.ZERRO,
     discribe: "[0, 1, 2]",
@@ -275,7 +275,7 @@ export const testDateZERRO: TestData_T[] = [
   },
 ];
 
-export const testDateMixed: TestData_T[] = [
+export const testDateMixed: TestWinner_T[] = [
   {
     answer: Winner_E.ZERRO,
     discribe: "[0, 1, 2]=false, [4, 8]=true",
@@ -406,7 +406,7 @@ export const testDateMixed: TestData_T[] = [
   },
 ];
 
-export const testDateNull: TestData_T[] = [
+export const testDateNull: TestWinner_T[] = [
   {
     answer: null,
     discribe: "[0,9]=true [4]=false",
