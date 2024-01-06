@@ -1,5 +1,5 @@
 import { Utilits as Utl } from "#commonUtilits/utilits";
-import { Sell_I } from "#reducers/state";
+import { Sell_I } from "#reducers/tic-tac-toe/state";
 import {
   Tic_tac_modes_E,
   Count_sells_E,

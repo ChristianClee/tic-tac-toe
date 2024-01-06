@@ -1,5 +1,8 @@
-import { Sell_I } from "#reducers/state";
-import { Winner_E, Tic_tac_modes_E } from "#constants/tic-tac-toe-base/constNames";
+import { Sell_I } from "#reducers/tic-tac-toe/state";
+import {
+  Winner_E,
+  Tic_tac_modes_E,
+} from "#constants/tic-tac-toe-base/constNames";
 
 export type TestWinner_T = {
   answer: null | Winner_E;

@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './RadioInput.module.scss'
-import { GameContext } from '#reducers/context'
+import { GameContext } from '#reducers/tic-tac-toe/context'
 import { useContext } from 'react';
-import { ActionType_E } from '#reducers/actions'
+import { ActionType_E } from '#reducers/tic-tac-toe/actions'
 import { Utilits } from './utilits'
 import { Tic_tac_modes_E } from '#constants/tic-tac-toe-base/constNames'
 

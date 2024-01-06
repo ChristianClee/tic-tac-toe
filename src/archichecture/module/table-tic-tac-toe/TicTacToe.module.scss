@@ -1,4 +1,4 @@
-@import '#archichecture/pages/table_page/variables.scss';
+@import '#main-styles/variables.scss';
 @import '#main-styles/variables';
 .wrapper{
   width: 80vw;
@@ -20,16 +20,13 @@
   overflow: hidden;
 }
 
-@media(min-width:$size-flex-direction){
-  .wrapper{
-    order: 1;
-  }
-}
+
 
 @media (min-width: $S){
   .wrapper{
     width: 60vw;
     height: 60vw;
+    order: 1;
 }
 }
 

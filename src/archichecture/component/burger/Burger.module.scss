@@ -1,0 +1,38 @@
+@import '#main-styles/variables';
+
+.wrapper{
+  position: relative;
+  width: 4rem;
+  height: 2.5rem;
+  border: 1px dashed white;
+  cursor: pointer;
+}
+
+.button{
+  width: 90%;
+  height: 80%;
+  // border: 1px solid rgba(255, 255, 255, 0.252);
+  border-radius: .5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.activeBtn{
+  animation: moving 1s linear infinite alternate 0s forwards;
+}
+
+
+  
+
+
+
+@keyframes moving{
+  0%{
+    top: 58%;
+  }
+
+  100%{
+    top: 42%;
+  }
+}

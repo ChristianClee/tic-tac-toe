@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import style from './TicTacToe.module.scss';
-import { GameContext } from '#reducers/context';
+import { GameContext } from '#reducers/tic-tac-toe/context';
 import { useContext } from 'react';
 import TheSell from '#archichecture/component/theSell/TheSell';
 import { Utilits } from './coreGame';
 import { Utilits as Utl } from './utilits';
 
-import {ActionType_E } from '#reducers/actions'
+import {ActionType_E } from '#reducers/tic-tac-toe/actions'
 
 
 

@@ -1,0 +1,50 @@
+.line-top-enter {
+  left: -100vw
+}
+.line-top-enter-active {
+  left: 0;
+  transition: 330ms;
+}
+.line-top-exit {
+  left: 0;
+}
+.line-top-exit-active {
+  left: -100vw;
+  transition: 330ms;
+}
+
+
+.line-middle-enter {
+  left: -100vw
+}
+.line-middle-enter-active {
+  left: 0;
+  transition: 330ms;
+  transition-delay: 330ms;
+}
+.line-middle-exit {
+  left: 0;
+}
+.line-middle-exit-active {
+  left: -100vw;
+  transition: 330ms;
+  transition-delay: 330ms;
+}
+
+
+.line-bottom-enter {
+  left: -100vw
+}
+.line-bottom-enter-active {
+  left: 0;
+  transition: 330ms;
+  transition-delay: 660ms;
+}
+.line-bottom-exit {
+  left: 0;
+}
+.line-bottom-exit-active {
+  left: -100vw;
+  transition: 330ms;
+  transition-delay: 660ms;
+}

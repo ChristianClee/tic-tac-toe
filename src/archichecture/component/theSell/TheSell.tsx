@@ -1,11 +1,11 @@
 import React  from 'react';
 import style from './TheSell.module.scss';
-import { GameContext } from '#reducers/context';
-import { ActionType_E } from '#reducers/actions' 
+import { GameContext } from '#reducers/tic-tac-toe/context';
+import { ActionType_E } from '#reducers/tic-tac-toe/actions' 
 import { useContext } from 'react';
 import TheChest from '#archichecture/ui/theChest/TheChest';
 import TheNull from '#archichecture/ui/theNull/TheNull';
-import { Sell_I } from '#reducers/state'
+import { Sell_I } from '#reducers/tic-tac-toe/state'
 import { Utilits } from './utilits'
 
 type PropsT = {
@@ -38,8 +38,8 @@ const TheSell: React.FC<PropsT> = ({ item }) => {
           item.type === false ?
             <TheNull />
             :
-            // null
-            <p style={{color:"white", fontSize: "2rem"}}>{item.index}</p> // !!! it is for development
+            null
+            // <p style={{color:"white", fontSize: "2rem"}}>{item.index}</p> // !!! it is for development
       }
     </div>
   );

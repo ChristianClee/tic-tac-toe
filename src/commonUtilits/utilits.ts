@@ -1,16 +1,15 @@
-import {Sell_I} from '#reducers/state'
+import { Sell_I } from "#reducers/tic-tac-toe/state";
 
 export class Utilits {
   static getSellsArr(num: number): Sell_I[] {
-    const result = []                                                               
+    const result = [];
     for (let i = 0; i < num; i++) {
-
       const obj: Sell_I = {
         key: String(Math.random() + i),
         index: i,
         type: null,
       };
-      
+
       result.push(obj);
     }
     return result;

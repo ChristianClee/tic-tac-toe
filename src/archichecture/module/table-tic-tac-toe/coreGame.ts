@@ -1,7 +1,10 @@
-import { Sell_I } from "#reducers/state";
+import { Sell_I } from "#reducers/tic-tac-toe/state";
 import { threeToThree } from "#constants/tic-tac-toe-base/3_to_3_answer";
 import { fiveToFive } from "#constants/tic-tac-toe-base/5_to_5_answer";
-import { Tic_tac_modes_E, Winner_E } from "#constants/tic-tac-toe-base/constNames";
+import {
+  Tic_tac_modes_E,
+  Winner_E,
+} from "#constants/tic-tac-toe-base/constNames";
 
 export class Utilits {
   static getArrCount(bool: boolean, arr: Sell_I[]): number[] {
@@ -12,11 +15,11 @@ export class Utilits {
   static getIsintersection(arr: number[], mainArr: number[][]): boolean {
     // it check is arr consisted from values in 'threeToThree', it's main process
     const winArr = this.getWinArr(arr, mainArr);
-    if (winArr.length) return true
-    else return false
+    if (winArr.length) return true;
+    else return false;
   }
 
-  static getWinArr( arr: number[], mainArr: number[][]) {
+  static getWinArr(arr: number[], mainArr: number[][]) {
     let result: number[] = [];
     mainArr.forEach((item: number[]) => {
       let innerResult: boolean[] = [];
@@ -74,7 +77,6 @@ export class Utilits {
     winner: Winner_E | null,
     mode: Tic_tac_modes_E
   ): void | number[] {
-
     let arrUser: number[];
     let arrMain: number[][];
     if (winner === Winner_E.CROSS) {
