@@ -24,6 +24,18 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
         sells: action.payload,
       };
     
+    case ActionType_E.ChangeScope:
+      return {
+        ...state,
+        scope: action.payload
+      };
+    
+    case ActionType_E.SetWinnerCombinatios:
+      return {
+        ...state,
+        winnerCombination: action.payload
+      };
+    
   
     
     default:

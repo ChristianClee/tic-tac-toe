@@ -2,8 +2,11 @@
 import {
   Tic_tac_modes_E,
   Count_sells_E,
+  Winner_E
 } from "#constants/tic-tac-toe-base/constNames";
 import { Utilits } from "#commonUtilits/utilits";
+
+
 
 export interface Sell_I {
   key: string; // it is unique value that was generated via Math.random module
@@ -17,10 +20,21 @@ export interface Mode_I {
 }
 export interface Game_I extends Mode_I {
   typeMarker: boolean; // it shows who must to make move, true means <cross> false means <zerro>
+  scope: {
+    // it shows scope between two players
+    [Winner_E.CROSS]: number;
+    [Winner_E.ZERRO]: number;
+  };
+  winnerCombination: number[]; // it shows winner combinations
 }
 
 export const initialGameState: Game_I = {
   currentGame: Tic_tac_modes_E.ONE,
   sells: Utilits.getSellsArr(Count_sells_E.oneMode),
   typeMarker: true,
+  scope: {
+    [Winner_E.CROSS]: 0,
+    [Winner_E.ZERRO]: 0,
+  },
+  winnerCombination: [],
 };

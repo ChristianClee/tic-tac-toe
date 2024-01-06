@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import style from './TheSell.module.scss';
 import { GameContext } from '#reducers/context';
 import { ActionType_E } from '#reducers/actions' 
@@ -13,10 +13,11 @@ type PropsT = {
 }
 const TheSell: React.FC<PropsT> = ({ item }) => {
   const { state, dispatch } = useContext(GameContext)
+  const isWinSell = Utilits.isWinnerSell(state.winnerCombination, item.index)
 
   return (
     <div
-      className={style.wrapper}
+      className={isWinSell? [style.wrapper, style.active].join(" ") :style.wrapper}
       onClick={(e) => {
         if (item.type === null) {
           dispatch({
@@ -37,7 +38,8 @@ const TheSell: React.FC<PropsT> = ({ item }) => {
           item.type === false ?
             <TheNull />
             :
-            null
+            // null
+            <p style={{color:"white", fontSize: "2rem"}}>{item.index}</p> // !!! it is for development
       }
     </div>
   );

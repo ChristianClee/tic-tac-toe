@@ -3,7 +3,10 @@ import style from './TicTacToe.module.scss';
 import { GameContext } from '#reducers/context';
 import { useContext } from 'react';
 import TheSell from '#archichecture/component/theSell/TheSell';
-import { Utilits } from './utilits';
+import { Utilits } from './coreGame';
+import { Utilits as Utl } from './utilits';
+
+import {ActionType_E } from '#reducers/actions'
 
 
 
@@ -12,13 +15,27 @@ type Props = {
 
 
 const TicTacToe: React.FC<Props> = () => {
-  const { state } = useContext(GameContext)
+  const { state, dispatch } = useContext(GameContext)
   const rows = Math.sqrt(state.sells.length)
 
   useEffect(() => {
-
     const win = Utilits.getWinner(state.sells, state.currentGame)
-    console.log(win)
+    const res = Utilits.getWinnerResult(state.sells, win, state.currentGame)
+
+    if (win) {
+      dispatch({
+        type: ActionType_E.ChangeScope,
+        payload: Utl.getScopeRessult(win, state.scope)
+      })
+    }
+    if (res) {
+      dispatch({
+        type: ActionType_E.SetWinnerCombinatios,
+        payload: res
+      })
+    }
+   
+
   },[state.sells])
 
   return (

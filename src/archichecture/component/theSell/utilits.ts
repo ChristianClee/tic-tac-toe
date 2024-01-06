@@ -11,4 +11,7 @@ export class Utilits {
       }
     })
   }
+  static isWinnerSell(arr: number[], index: number ):boolean {
+    return arr.includes(index)
+  }
 }

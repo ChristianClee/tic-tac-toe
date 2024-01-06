@@ -1,4 +1,4 @@
-import { Sell_I } from "#reducers/state";
+import { TestData_T } from "../types";
 import { Winner_E } from "#constants/tic-tac-toe-base/constNames";
 
 // const arr: number[][] = [
@@ -12,46 +12,8 @@ import { Winner_E } from "#constants/tic-tac-toe-base/constNames";
 //   [0, 4, 8],/
 //   [2, 4, 6], /
 // ];
-// const Winner_E.CROSS = Winner_E.Winner_E.CROSS
-// const Winner_E.ZERRO = Winner_E.Winner_E.ZERRO
 
-export type TestData_T = {
-  answer: null | Winner_E;
-  discribe: string;
-  request: Sell_I[];
-};
-
-export const testDateTrue: TestData_T[] = [
-  {
-    answer: null,
-    discribe: "[0,9]",
-    request: [
-      { key: "1", index: 0, type: true },
-      { key: "1", index: 1, type: null },
-      { key: "1", index: 2, type: null },
-      { key: "1", index: 3, type: null },
-      { key: "1", index: 4, type: null },
-      { key: "1", index: 5, type: null },
-      { key: "1", index: 6, type: null },
-      { key: "1", index: 7, type: null },
-      { key: "1", index: 8, type: true },
-    ],
-  },
-  {
-    answer: null,
-    discribe: "[]",
-    request: [
-      { key: "1", index: 0, type: null },
-      { key: "1", index: 1, type: null },
-      { key: "1", index: 2, type: null },
-      { key: "1", index: 3, type: null },
-      { key: "1", index: 4, type: null },
-      { key: "1", index: 5, type: null },
-      { key: "1", index: 6, type: null },
-      { key: "1", index: 7, type: null },
-      { key: "1", index: 8, type: null },
-    ],
-  },
+export const testDateCROSS: TestData_T[] = [
   {
     answer: Winner_E.CROSS,
     discribe: "[0, 1, 2]",
@@ -182,7 +144,7 @@ export const testDateTrue: TestData_T[] = [
   },
 ];
 
-export const testDateFalse: TestData_T[] = [
+export const testDateZERRO: TestData_T[] = [
   {
     answer: Winner_E.ZERRO,
     discribe: "[0, 1, 2]",
