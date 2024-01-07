@@ -1,16 +1,24 @@
+@import '#main-styles/transition-variables';
+
+$dalay: 150ms;
+$duration: $menuDelay - ($dalay * 2); 
+
+
+
+
 .line-top-enter {
   left: -100vw
 }
 .line-top-enter-active {
   left: 0;
-  transition: 330ms;
+  transition: $duration;
 }
 .line-top-exit {
   left: 0;
 }
 .line-top-exit-active {
   left: -100vw;
-  transition: 330ms;
+  transition: $duration;
 }
 
 
@@ -19,16 +27,16 @@
 }
 .line-middle-enter-active {
   left: 0;
-  transition: 330ms;
-  transition-delay: 330ms;
+  transition: $duration;
+  transition-delay: $dalay;
 }
 .line-middle-exit {
   left: 0;
 }
 .line-middle-exit-active {
   left: -100vw;
-  transition: 330ms;
-  transition-delay: 330ms;
+  transition: $duration;
+  transition-delay: $dalay;
 }
 
 
@@ -37,14 +45,14 @@
 }
 .line-bottom-enter-active {
   left: 0;
-  transition: 330ms;
-  transition-delay: 660ms;
+  transition: $duration;
+  transition-delay: $dalay * 2;
 }
 .line-bottom-exit {
   left: 0;
 }
 .line-bottom-exit-active {
   left: -100vw;
-  transition: 330ms;
-  transition-delay: 660ms;
+  transition: $duration;
+  transition-delay: $dalay * 2;
 }

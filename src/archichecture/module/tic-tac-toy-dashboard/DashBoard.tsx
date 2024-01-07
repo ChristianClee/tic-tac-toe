@@ -6,7 +6,7 @@ import { GameContext } from '#reducers/tic-tac-toe/context'
 import { CommonContext } from '#reducers/common/context'
 import Button_1 from '#archichecture/ui/button_1/Button_1';
 import ChoiceMode from '#archichecture/component/choice_mode/ChoiceMode';
-import Burger from '#archichecture/component/burger/Burger';
+import Burger from '#archichecture/ui/burger_button/Burger';
 
 
 type Props = {

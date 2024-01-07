@@ -36,6 +36,23 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
         winnerCombination: action.payload
       };
     
+    case ActionType_E.ChengeMode:
+      return {
+        ...state,
+        modeGame: action.payload
+      };
+    
+    case ActionType_E.TuggleModalWindow:
+      return {
+        ...state,
+        modalWindow: !state.modalWindow
+      };
+    
+    case ActionType_E.ChangeMenuLink:
+      return {
+        ...state,
+        menuLink: action.payload
+      };
   
     
     default:

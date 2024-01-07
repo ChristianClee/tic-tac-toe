@@ -1,8 +1,10 @@
 //this workin belong to Ilya Mishkov, I make english comments for training my writing skills it is reason why do I do this
 import {
   Tic_tac_modes_E,
+  Tic_tac_opponent_E,
   Count_sells_E,
-  Winner_E
+  Winner_E,
+  MenuLink_E,
 } from "#constants/tic-tac-toe-base/constNames";
 import { Utilits } from "#commonUtilits/utilits";
 
@@ -26,6 +28,9 @@ export interface Game_I extends Mode_I {
     [Winner_E.ZERRO]: number;
   };
   winnerCombination: number[]; // it shows winner combinations
+  modeGame: Tic_tac_opponent_E; // it shows who will be opponent,
+  modalWindow: boolean; // it shows modal window
+  menuLink: MenuLink_E; // it shows currunt page in memu, !!! it should change to Lint react router v6 at the future
 }
 
 export const initialGameState: Game_I = {
@@ -37,4 +42,7 @@ export const initialGameState: Game_I = {
     [Winner_E.ZERRO]: 0,
   },
   winnerCombination: [],
+  modeGame: Tic_tac_opponent_E.COMPUTER,
+  modalWindow: false,
+  menuLink: MenuLink_E.GAMEMODE,
 };

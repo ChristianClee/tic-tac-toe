@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './TheLine.module.scss'
-import './transition.css'
+import './transition.scss'
 import {CSSTransition} from 'react-transition-group'
 
 
@@ -14,7 +14,7 @@ const TheLine: React.FC<PropsT> = ({styleLine, inState, color}) => {
   return (
     <CSSTransition
       in={!inState}
-      timeout={1000}
+      timeout={750}
       classNames={`line-${styleLine}`}
       mountOnEnter={true}
       unmountOnExit={true}

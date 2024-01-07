@@ -3,5 +3,5 @@ export interface Common_I {
 }
 
 export const initialCommon: Common_I = {
-  burgerState: false,
+  burgerState: true,
 };
