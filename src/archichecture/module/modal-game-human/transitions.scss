@@ -1,0 +1,14 @@
+.ssss-enter {
+  top: 100vh;
+}
+.ssss-enter-active {
+  top: 0;
+  transition: 500ms;
+}
+.ssss-exit {
+  top: 0;
+}
+.ssss-exit-active {
+  top: 100vh;
+  transition: 500ms;
+}

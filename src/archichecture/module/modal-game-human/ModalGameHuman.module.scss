@@ -12,9 +12,18 @@
 
 
 .message{
+  position: relative;
   font-size: 2rem;
   background-color: white;
   width: 90%;
   height: 50%;
   border-radius: .5rem;
+}
+
+
+
+
+.buttonOk{
+  border: 2px solid black;
+  padding: 1rem;
 }

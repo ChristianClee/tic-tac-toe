@@ -42,7 +42,7 @@ export const initialGameState: Game_I = {
     [Winner_E.ZERRO]: 0,
   },
   winnerCombination: [],
-  modeGame: Tic_tac_opponent_E.COMPUTER,
+  modeGame: Tic_tac_opponent_E.NOLINK,
   modalWindow: false,
   menuLink: MenuLink_E.GAMEMODE,
 };

@@ -15,10 +15,19 @@ export enum Count_sells_E {
 
 export enum Tic_tac_opponent_E {
   COMPUTER = 'computer',
-  HUMAN = 'human'
+  HUMAN = 'human',
+  NOLINK = 'noLink'
 }
 
 export enum MenuLink_E {
   GAMEMODE = "gamemode",
   INTERACTIVEGAME = "interactiveGame",
+}
+
+export enum Tic_tac_opponent_names_E{
+  PLAYER_1 = 'Player 1',
+  PLAYER_2 = 'Player 2',
+  PLAYER = 'Player',
+  COMPUTER = 'Computer',
+  UNKNOWN = 'Unknown',
 }

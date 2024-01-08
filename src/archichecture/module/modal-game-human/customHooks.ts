@@ -16,10 +16,10 @@ export const useCustomHook: CustomHook_T = ( wrapRef ) => {
       if (firstRender) {
         setTimeout(() => {
           changeStyle("none", wrapRef);
-        }, 2000);
+        }, 800);
       } else {
         changeStyle("none", wrapRef);
-        setFirstRender(firstRender);
+        setFirstRender(true);
       }
     }
   }, [state.modalWindow]);

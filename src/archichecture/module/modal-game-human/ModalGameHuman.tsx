@@ -4,7 +4,8 @@ import { GameContext } from '#reducers/tic-tac-toe/context'
 import { ActionType_E } from '#reducers/tic-tac-toe/actions'
 import { Tic_tac_opponent_E } from '#constants/tic-tac-toe-base/constNames'
 import {useCustomHook } from './customHooks'
-
+import { CSSTransition } from 'react-transition-group'
+import './transitions.scss'
 
 type PropsT = {
 
@@ -24,14 +25,28 @@ const ModalGameHuman: React.FC<PropsT> = () => {
       className={style.wrapper}
       ref={wrapRef}
       onClick={() => {
-        // dispatch({
-        //   type: ActionType_E.ChengeMode
-        // })
+        dispatch({
+          type: ActionType_E.TuggleModalWindow
+        })
       }}
     >
-      <div className={state.modalWindow? [style.message, style.activeMess].join(" ") : style.message}>
-         hello
-      </div>
+      <CSSTransition
+        in={state.modalWindow}
+        timeout={750}
+        classNames={'ssss'}
+        mountOnEnter={true}
+        unmountOnExit={true}
+      >
+        <div className={style.message}>
+          
+          <button
+            className={style.buttonOk}
+          >
+            ok
+          </button>
+        </div>
+      </CSSTransition>
+      
 
     </div>
   );

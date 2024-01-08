@@ -9,7 +9,14 @@ export function CommonReduser(state: Common_I, action: CommonActions_T) {
         ...state,
         burgerState: !state.burgerState,
       };
-    
-    default: return state;
+
+    case ActionCommon_E.TuggleLightDarkThemes:
+      return {
+        ...state,
+        lightDarkTheme: action.payload,
+      };
+
+    default:
+      return state;
   }
 }

@@ -1,4 +1,6 @@
 @import './variables.scss'; 
+@import './colorVariables.scss';
+// @import '../archichecture/component/ligihtDarkController/sss.scss';
 
 html{
   font-size: 100%;
@@ -8,12 +10,20 @@ html{
 #root{
   /* min-height: 100vh; */
 }
+
+
+
+
+
 .App{
-  background-color: rgb(18, 18, 18);
+  // background-color: rgb(199, 185, 167);
+  background-color: $bgcolor;
   min-height: 100vh;
   margin: 0 auto;
   width: 100%;
   padding-top: 1px;
+  transition: .5s;
+
 }
 
 @media(min-width: $L){

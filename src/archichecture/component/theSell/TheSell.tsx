@@ -33,10 +33,10 @@ const TheSell: React.FC<PropsT> = ({ item }) => {
     >
       {
        item.type === true ?
-          <TheChest />
+          <TheChest moving={true} />
           :
           item.type === false ?
-            <TheNull />
+            <TheNull moving={true}/>
             :
             null
             // <p style={{color:"white", fontSize: "2rem"}}>{item.index}</p> // !!! it is for development

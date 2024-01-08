@@ -7,9 +7,12 @@ import {CSSTransition} from 'react-transition-group'
 type PropsT = {
   styleLine: string,
   inState: boolean,
-  color:string,
+  color:'dashboard' | 'menu',
 }
 const TheLine: React.FC<PropsT> = ({styleLine, inState, color}) => {
+  const lineStatus = color === 'menu'
+  const lineBaseStyle = [style.line, style[styleLine]].join(' ')
+
 
   return (
     <CSSTransition
@@ -20,8 +23,8 @@ const TheLine: React.FC<PropsT> = ({styleLine, inState, color}) => {
       unmountOnExit={true}
     >
       <span
-        className={[style.line, style[styleLine]].join(' ')}
-        style={{background: color}}
+        className={lineStatus? [lineBaseStyle, style.menuLine].join(' ') : lineBaseStyle}
+        // style={ {background: color}}
       ></span>
     </CSSTransition>
     

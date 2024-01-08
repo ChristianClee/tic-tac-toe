@@ -1,13 +1,21 @@
+@import '#main-styles/colorVariables';
+
 .wrapper{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  fill: rgb(255, 255, 255);
+  fill: $crossFigure;
   width: 60%;
   height: 60%;
+  transition: fill;
+  
+}
+
+.activeWrapp{
   animation: moving 3s linear infinite alternate 0s forwards;
 }
+
 
 @keyframes moving{
    0%{top: 55%}

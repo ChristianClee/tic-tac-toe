@@ -2,7 +2,7 @@
 
 declare module "csstype" {
   interface Properties {
-    "--rows"?: string;
+    "--DarkLight"?: string;
     "--culomns"?: string;
   }
 }

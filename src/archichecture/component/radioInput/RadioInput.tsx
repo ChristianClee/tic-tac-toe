@@ -5,6 +5,9 @@ import { useContext } from 'react';
 import { ActionType_E } from '#reducers/tic-tac-toe/actions'
 import { Utilits } from './utilits'
 import { Tic_tac_modes_E, Tic_tac_opponent_E } from '#constants/tic-tac-toe-base/constNames'
+import Button_2 from '#archichecture/ui/button_2/Button_2';
+
+
 
 type PropsT = {
   text: string;
@@ -41,18 +44,23 @@ const RadioInput: React.FC<PropsT> = ({ text, index, modeGame }) => {
   return (
     <div className={style.wrapper}>
 
-      {/* <div className={result? [style.label, style.labelActive].join(" ") : style.label}>{text}</div> */}
-      <div className={style.label}>{text}</div>
-      <div
-        className={style.window}
-        onClick={onclick}
-      >
-        {
-          result
-            &&
-          <span className={style.marker}></span>  
-        }
+      <div className={style.button}>
+        <Button_2 text={text} />
       </div>
+      
+      <div className={style.radio}>
+        <div
+          className={style.window}
+          onClick={onclick}
+        >
+          {
+            result
+              &&
+            <span className={style.marker}></span>  
+          }
+        </div>
+      </div>
+      
     </div>
   );
 }

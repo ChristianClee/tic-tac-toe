@@ -6,12 +6,10 @@ import TheLine from '#archichecture/ui/line/TheLine';
 
 type PropsT = {
   isBurger: boolean;
-  color: string;
+  color: 'dashboard' | 'menu';
 }
 const Burger: React.FC<PropsT> = ({isBurger, color}) => {
   const { dispatch } = useContext(CommonContext)
-  // console.log(state.burgerState)
-
 
 
   return (

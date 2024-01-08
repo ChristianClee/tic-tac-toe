@@ -3,12 +3,12 @@ import style from './TheNull.module.scss'
 import {ReactComponent as Zerro} from '#assets/svg/null-pumkin.svg'
 
 type PropsT = {
-
+  moving:boolean
 }
-const TheNull:React.FC<PropsT> = () => {
+const TheNull: React.FC<PropsT> = ({ moving }) => {
   return (
     <Zerro
-      className={style.wrapper}
+      className={moving?  [style.wrapper, style.activeWrapp].join(' ') : style.wrapper}
     >
     </Zerro>
   );
