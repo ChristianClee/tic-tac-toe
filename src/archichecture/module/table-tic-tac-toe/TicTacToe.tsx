@@ -1,13 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useContext } from 'react';
 import style from './TicTacToe.module.scss';
 import { GameContext } from '#reducers/tic-tac-toe/context';
-import { useContext } from 'react';
 import TheSell from '#archichecture/component/theSell/TheSell';
-import { Utilits } from './coreGame';
-import { Utilits as Utl } from './utilits';
-
-import {ActionType_E } from '#reducers/tic-tac-toe/actions'
-
+import { useCustomHook } from "./useCustomHooks"
 
 
 type Props = {
@@ -17,26 +12,8 @@ type Props = {
 const TicTacToe: React.FC<Props> = () => {
   const { state, dispatch } = useContext(GameContext)
   const rows = Math.sqrt(state.sells.length)
-
-  useEffect(() => {
-    const win = Utilits.getWinner(state.sells, state.currentGame)
-    const res = Utilits.getWinnerResult(state.sells, win, state.currentGame)
-
-    if (win) {
-      dispatch({
-        type: ActionType_E.ChangeScope,
-        payload: Utl.getScopeRessult(win, state.scope)
-      })
-    }
-    if (res) {
-      dispatch({
-        type: ActionType_E.SetWinnerCombinatios,
-        payload: res
-      })
-    }
-   
-
-  },[state.sells])
+  
+  useCustomHook()
 
   return (
      <div
@@ -57,7 +34,6 @@ const TicTacToe: React.FC<Props> = () => {
             </div>
           })
         }
-
       </div>
   );
 }

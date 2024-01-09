@@ -24,7 +24,6 @@ const DashBoard: React.FC<Props> = () => {
   const [names, setNames] = useState<Tic_tac_opponent_names_E[]>([])
   // console.log(names)
   useCustomHook(setNames)
-  console.log(state.typeMarker)
 
 
 

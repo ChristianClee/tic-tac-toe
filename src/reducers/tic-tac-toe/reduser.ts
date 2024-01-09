@@ -11,51 +11,67 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
         currentGame: action.payload.currentGame,
         sells: action.payload.sells,
       };
+
+    case ActionType_E.TuggleMarker:
+      return {
+        ...state,
+        typeMarker: !state.typeMarker,
+      };
     
     case ActionType_E.SetMarker:
       return {
         ...state,
-        typeMarker: !state.typeMarker
+        typeMarker: action.payload,
       };
-    
-    case ActionType_E.SetMarkerItem: 
+
+    case ActionType_E.SetMarkerItem:
       return {
         ...state,
         sells: action.payload,
       };
-    
+
     case ActionType_E.ChangeScope:
       return {
         ...state,
-        scope: action.payload
+        scope: action.payload,
       };
-    
+
     case ActionType_E.SetWinnerCombinatios:
       return {
         ...state,
-        winnerCombination: action.payload
+        winnerCombination: action.payload,
       };
-    
+
     case ActionType_E.ChengeMode:
       return {
         ...state,
-        modeGame: action.payload
+        modeGame: action.payload,
       };
-    
+
     case ActionType_E.TuggleModalWindow:
       return {
         ...state,
-        modalWindow: !state.modalWindow
+        modalWindow: action.payload,
       };
-    
+
     case ActionType_E.ChangeMenuLink:
       return {
         ...state,
-        menuLink: action.payload
+        menuLink: action.payload,
       };
-  
-    
+    case ActionType_E.SetnoWinner:
+      return {
+        ...state,
+        noWinner: action.payload,
+      };
+
+    case ActionType_E.SetLastWinner:
+      return {
+        ...state,
+        lastWinner: action.payload,
+      };
+
     default:
-      return state
+      return state;
   }
 }

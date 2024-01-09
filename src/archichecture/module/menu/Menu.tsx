@@ -6,11 +6,19 @@ import Burger from '../../ui/burger_button/Burger';
 import ChoiceMode from '#archichecture/component/choice_mode/ChoiceMode';
 import HeaderMenu from '#archichecture/component/headerMenu/HeaderMenu';
 import RadioInput from '#archichecture/component/radioInput/RadioInput';
-import { Tic_tac_modes_E, MenuLink_E, Tic_tac_opponent_E } from '#constants/tic-tac-toe-base/constNames';
+import {
+  Tic_tac_modes_E,
+  MenuLink_E,
+  Tic_tac_opponent_E,
+  Modal_message_types_E,
+} from '#constants/tic-tac-toe-base/constNames';
 import Button_2 from '#archichecture/ui/button_2/Button_2';
 import { CSSTransition } from 'react-transition-group';
 import  './transition.scss'
 import Button_3 from '#archichecture/ui/button_3/Button_3';
+
+import ModalGameHuman from '#archichecture/module/modal-game-human/ModalGameHuman';
+
 
 type PropsT = {
 
@@ -39,8 +47,8 @@ const Menu: React.FC<PropsT> = () => {
           state_game.menuLink === MenuLink_E.INTERACTIVEGAME ?
             <>
               <div className={style.choise}>
-                <RadioInput text={"no link"} index={Tic_tac_opponent_E.COMPUTER} modeGame={state_game.modeGame}/> 
-                <RadioInput text={"computer"} index={Tic_tac_opponent_E.NOLINK} modeGame={state_game.modeGame}/> 
+                <RadioInput text={"no link"} index={Tic_tac_opponent_E.NOLINK} modeGame={state_game.modeGame}/> 
+                <RadioInput text={"computer"} index={Tic_tac_opponent_E.COMPUTER} modeGame={state_game.modeGame}/> 
                 <RadioInput text={"friend"} index={Tic_tac_opponent_E.HUMAN} modeGame={state_game.modeGame} /> 
                 {
                  
@@ -52,8 +60,15 @@ const Menu: React.FC<PropsT> = () => {
                     unmountOnExit={true}
                     >
                       <div className={style.connectBlock}>
-                        <Button_3 text={'create new game'} status={false} />
-                        <Button_3 text={'add to game'} status={false}/>
+                      <Button_3
+                        text={'create new game'}
+                        status={false}
+                        typeMessage={Modal_message_types_E.CREATEGAME} />
+                      <Button_3
+                        text={'add to game'}
+                        status={false}
+                        typeMessage={Modal_message_types_E.ADDTOGAME}
+                      />
                       </div>
                   </CSSTransition>
                

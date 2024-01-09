@@ -2,9 +2,9 @@
 import {
   Tic_tac_modes_E,
   Tic_tac_opponent_E,
-  Count_sells_E,
   Winner_E,
   MenuLink_E,
+  Modal_message_types_E
 } from "#constants/tic-tac-toe-base/constNames";
 import { Utilits } from "#commonUtilits/utilits";
 
@@ -27,22 +27,29 @@ export interface Game_I extends Mode_I {
     [Winner_E.CROSS]: number;
     [Winner_E.ZERRO]: number;
   };
+  // limitGame: number; // it shows how many games will be played
+  noWinner: boolean; // it shows is winner in game or not
+  lastWinner: null | Winner_E;
   winnerCombination: number[]; // it shows winner combinations
   modeGame: Tic_tac_opponent_E; // it shows who will be opponent,
-  modalWindow: boolean; // it shows modal window
+  modalWindow: null | Modal_message_types_E; // it shows modal window
   menuLink: MenuLink_E; // it shows currunt page in memu, !!! it should change to Lint react router v6 at the future
 }
 
 export const initialGameState: Game_I = {
   currentGame: Tic_tac_modes_E.ONE,
-  sells: Utilits.getSellsArr(Count_sells_E.oneMode),
+  sells: Utilits.getCountSells(Tic_tac_modes_E.ONE),
   typeMarker: true,
   scope: {
     [Winner_E.CROSS]: 0,
     [Winner_E.ZERRO]: 0,
   },
+  noWinner: false,
+  lastWinner: null,
   winnerCombination: [],
   modeGame: Tic_tac_opponent_E.NOLINK,
-  modalWindow: false,
+  // modalWindow: null,
+  //!!! the comment above here is main than bellow
+  modalWindow: Modal_message_types_E.NOWINNER,
   menuLink: MenuLink_E.GAMEMODE,
 };

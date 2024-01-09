@@ -31,3 +31,10 @@ export enum Tic_tac_opponent_names_E{
   COMPUTER = 'Computer',
   UNKNOWN = 'Unknown',
 }
+
+export enum Modal_message_types_E {
+  WINNER = "winner",
+  NOWINNER = "noWinner",
+  CREATEGAME = "createGane",
+  ADDTOGAME = "addToGame",
+}

@@ -6,14 +6,14 @@ import {
 } from "#constants/tic-tac-toe-base/constNames";
 
 export class Utilits {
-  static getCount(index: Tic_tac_modes_E): Sell_I[] {
-    switch (index) {
-      case Tic_tac_modes_E.ONE:
-        return Utl.getSellsArr(Count_sells_E.oneMode);
-      case Tic_tac_modes_E.TWO:
-        return Utl.getSellsArr(Count_sells_E.twoMode);
-      default:
-        return Utl.getSellsArr(Count_sells_E.oneMode);
-    }
-  }
+  // static getCount(index: Tic_tac_modes_E): Sell_I[] {
+  //   switch (index) {
+  //     case Tic_tac_modes_E.ONE:
+  //       return Utl.getSellsArr(Count_sells_E.oneMode);
+  //     case Tic_tac_modes_E.TWO:
+  //       return Utl.getSellsArr(Count_sells_E.twoMode);
+  //     default:
+  //       return Utl.getSellsArr(Count_sells_E.oneMode);
+  //   }
+  // }
 }

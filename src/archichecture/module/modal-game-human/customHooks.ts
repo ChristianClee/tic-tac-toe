@@ -16,7 +16,7 @@ export const useCustomHook: CustomHook_T = ( wrapRef ) => {
       if (firstRender) {
         setTimeout(() => {
           changeStyle("none", wrapRef);
-        }, 800);
+        }, 750);
       } else {
         changeStyle("none", wrapRef);
         setFirstRender(true);

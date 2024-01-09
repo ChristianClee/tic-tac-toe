@@ -1,0 +1,47 @@
+@import '#main-styles/colorVariables';
+
+.wrapper{
+  // width: 90%;
+  background-color:$menuCollor ;
+  
+  min-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  padding: 1.5rem;
+
+}
+.title{
+  font-size: 2rem;
+}
+.textScope{
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.picturesContainer{
+  position: relative;
+  min-width: 10rem;
+  min-height: 10rem;
+  border: 3px solid black;
+  border-radius: .5rem;
+
+  background-color: white;
+
+}
+.container{
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+}
+
+.left{
+  top: 0;
+  left: 0;
+}
+
+.right{
+  bottom: 0;
+  right: 0;
+}

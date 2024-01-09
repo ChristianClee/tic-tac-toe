@@ -13,20 +13,22 @@ type PropsT = {
 }
 const TheSell: React.FC<PropsT> = ({ item }) => {
   const { state, dispatch } = useContext(GameContext)
+  const isNoWinner = !Boolean(state.lastWinner)
+  
   const isWinSell = Utilits.isWinnerSell(state.winnerCombination, item.index)
 
   return (
     <div
       className={isWinSell? [style.wrapper, style.active].join(" ") :style.wrapper}
       onClick={(e) => {
-        if (item.type === null) {
+        if (item.type === null && isNoWinner) {
           dispatch({
             type: ActionType_E.SetMarkerItem,
             payload: Utilits
               .getNewSells(state.sells, item.key, state.typeMarker)
           })
           dispatch({
-            type: ActionType_E.SetMarker
+            type: ActionType_E.TuggleMarker
           })
         }
       }}
