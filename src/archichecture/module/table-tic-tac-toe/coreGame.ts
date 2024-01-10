@@ -3,11 +3,12 @@ import { threeToThree } from "#constants/tic-tac-toe-base/3_to_3_answer";
 import { fiveToFive } from "#constants/tic-tac-toe-base/5_to_5_answer";
 import {
   Tic_tac_modes_E,
+  Tic_tac_opponent_E,
   Winner_E,
 } from "#constants/tic-tac-toe-base/constNames";
 
 export class CoreTicTac {
-  static getArrCount(bool: boolean, arr: Sell_I[]): number[] {
+  static getArrCount(bool: boolean | null, arr: Sell_I[]): number[] {
     // it returns array from numbers that are accordining type === <bool>
     return arr.filter((elem) => elem.type === bool).map((elem) => elem.index);
   }
@@ -17,6 +18,44 @@ export class CoreTicTac {
     const winArr = this.getWinArr(arr, mainArr);
     if (winArr.length) return true;
     else return false;
+  }
+
+  static isComputer(nameGame: string, isMyMove: boolean): boolean {
+    const isComputerMode = nameGame === Tic_tac_opponent_E.COMPUTER;
+    if (isComputerMode) {
+      return !isMyMove;
+    } else {
+      return false;
+    }
+  }
+
+  static getCompMove(
+    arr: Sell_I[],
+    nameGame: string,
+    isMyMove: boolean,
+    win: null | Winner_E
+  ): false | Sell_I[] {
+    if (!this.isComputer(nameGame, isMyMove)) return false;
+    if (!this.getFreeSells(arr)) return false;
+    // console.log(win);
+    if(win) return false
+    const freeIndex = this.getArrCount(null, arr);
+    // console.log(freeIndex);
+    const randomIndex = Math.floor(Math.random() * freeIndex.length);
+    const randomValue = freeIndex[randomIndex];
+
+    const n = arr.map((item) => {
+      if (item.index === randomValue) {
+        const key = item.key;
+        const index = item.index;
+        const type = false;
+        return { key, index, type };
+      } else {
+        return item;
+      }
+    });
+    // console.log(n);
+    return n;
   }
 
   static getWinArr(arr: number[], mainArr: number[][]) {
@@ -97,14 +136,14 @@ export class CoreTicTac {
   static getFreeSells(arr: Sell_I[]): number {
     return arr.filter((i) => i.type === null).length;
   }
-  
+
   static getNotFreeSells(arr: Sell_I[]): number {
     return arr.filter((i) => i.type !== null).length;
   }
 
-  static isNoWinner(arr: Sell_I[], win: Winner_E | null):boolean {
-    const freeSels = this.getFreeSells(arr) === 0
-    if (!win && freeSels) return true
-    else return false
+  static isNoWinner(arr: Sell_I[], win: Winner_E | null): boolean {
+    const freeSels = this.getFreeSells(arr) === 0;
+    if (!win && freeSels) return true;
+    else return false;
   }
 }

@@ -7,21 +7,37 @@ import TheChest from '#archichecture/ui/theChest/TheChest';
 import TheNull from '#archichecture/ui/theNull/TheNull';
 import { Sell_I } from '#reducers/tic-tac-toe/state'
 import { Utilits } from './utilits'
+import { Tic_tac_opponent_E } from '#constants/tic-tac-toe-base/constNames';
+// import {} from '#'
+
 
 type PropsT = {
   item: Sell_I
 }
 const TheSell: React.FC<PropsT> = ({ item }) => {
   const { state, dispatch } = useContext(GameContext)
-  const isNoWinner = !Boolean(state.lastWinner)
-  
+
+  const isNoWinner: boolean = !Boolean(state.lastWinner)
+  const isComputer: boolean = state.modeGame === Tic_tac_opponent_E.COMPUTER
+  let isMyMove: boolean = true
+  if (isComputer) {
+    isMyMove = state.typeMarker
+  }
+  // console.log(item.type, null && isNoWinner && isComputer)
+  // const condition: null | false = null && isNoWinner && isComputer
+
+
   const isWinSell = Utilits.isWinnerSell(state.winnerCombination, item.index)
+
+
+   
+
 
   return (
     <div
       className={isWinSell? [style.wrapper, style.active].join(" ") :style.wrapper}
       onClick={(e) => {
-        if (item.type === null && isNoWinner) {
+        if (item.type === null && isNoWinner && isMyMove) {
           dispatch({
             type: ActionType_E.SetMarkerItem,
             payload: Utilits
