@@ -18,6 +18,7 @@ import  './transition.scss'
 import Button_3 from '#archichecture/ui/button_3/Button_3';
 
 import ModalGameHuman from '#archichecture/module/modal-game-human/ModalGameHuman';
+import MovingButtons from '#archichecture/component/movingButtons/MovingButtons';
 
 
 type PropsT = {
@@ -51,15 +52,8 @@ const Menu: React.FC<PropsT> = () => {
                 <RadioInput text={"computer"} index={Tic_tac_opponent_E.COMPUTER} modeGame={state_game.modeGame}/> 
                 <RadioInput text={"friend"} index={Tic_tac_opponent_E.HUMAN} modeGame={state_game.modeGame} /> 
                 {
-                 
-                  <CSSTransition
-                    in={humanStyle}
-                    timeout={750}
-                    classNames={'dddd'}
-                    mountOnEnter={true}
-                    unmountOnExit={true}
-                    >
-                      <div className={style.connectBlock}>
+                  <MovingButtons myIn={humanStyle}>
+                    <div className={style.connectBlock}>
                       <Button_3
                         text={'create new game'}
                         status={false}
@@ -69,9 +63,9 @@ const Menu: React.FC<PropsT> = () => {
                         status={false}
                         typeMessage={Modal_message_types_E.ADDTOGAME}
                       />
-                      </div>
-                  </CSSTransition>
-               
+                    </div>
+                  </MovingButtons>
+
                 }
                 
               </div>

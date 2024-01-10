@@ -1,6 +1,52 @@
-.wrapper{
+@import '#main-styles/colorVariables';
 
+.wrapper{
+  // width: 90%;
+  background-color:$menuCollor ;
+  
+  min-height: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+  padding: 1.5rem;
+  border: 2px solid black;
+  border-radius: .5rem;
+}
+.title{
+  font-size: 2rem;
+}
+.textScope{
+  font-size: 1.5rem;
+  text-align: center;
 }
 
+.picturesContainer{
+  position: relative;
+  min-width: 10rem;
+  min-height: 10rem;
+  border: 2px solid black;
+  border-radius: .5rem;
+  background-color: $messageIconBg;
 
+}
+.container{
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+}
 
+.left{
+  top: 0;
+  left: 50%;
+  // border: 1px dashed black;
+  transform: translateX(-50%) rotate(6deg);
+  
+}
+
+.right{
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  // border: 1px dashed black;
+}

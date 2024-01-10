@@ -5,7 +5,7 @@ import { Game_I } from "#reducers/tic-tac-toe/state"
 import { GameActions_T } from "#reducers/tic-tac-toe/actions";
 
 
-type ResetFunc_T = (
+export type ResetFunc_T = (
   state: Game_I,
   dispatch: React.Dispatch<GameActions_T>
 ) => void;

@@ -1,0 +1,16 @@
+.wrapper{
+  border: 2px solid rgb(224, 25, 11);
+  padding: .3rem 2rem;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  color: rgb(224, 25, 11);
+}
+
+.wrapper:hover{
+  // background-color: red;
+  border: 2px solid white;
+  color: white;
+  box-shadow: 0 0 7px 3px white;
+
+}

@@ -9,6 +9,8 @@ export const dark = {
   "--sellMenu": "rgb(10,10,10)",
   "--inscriptDashdoard": "rgb(0, 166, 255)",
   "--scopeDashdoard": "rgb(200, 200, 200)",
+  "--buttonNext": "rgb(0, 166, 255)",
+  "--messageIconBg": "rgb(0, 55, 55)",
 };
 
 export const light = {
@@ -20,6 +22,8 @@ export const light = {
   "--lineMenu": "rgb(155, 0, 0)",
   "--lineMenu_1": "rgb(10, 40, 0)",
   "--sellMenu": "rgb(200,200,200)",
-  "--inscriptDashdoard": "rgb(155, 0, 0)",
+  "--inscriptDashdoard": "rgb(155, 122, 0)",
   "--scopeDashdoard": "rgb(10, 10, 10)",
+  "--buttonNext": "rgb(155, 122, 0)",
+  "--messageIconBg": "rgb(186, 186, 1)",
 };

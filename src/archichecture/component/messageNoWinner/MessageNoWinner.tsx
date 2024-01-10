@@ -20,7 +20,6 @@ const MessageNoWinner:React.FC<PropsT> = () => {
         </div>
       </div>
       <p className={style.textScope}>The Owner of game is Ilya Mishkov</p>
-      {/* <p className={style.textScope}>current count is</p> */}
     </div>
   );
 }

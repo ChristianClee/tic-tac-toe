@@ -12,7 +12,6 @@ type Props = {
 const TicTacToe: React.FC<Props> = () => {
   const { state, dispatch } = useContext(GameContext)
   const rows = Math.sqrt(state.sells.length)
-  
   useCustomHook()
 
   return (

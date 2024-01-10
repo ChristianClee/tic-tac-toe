@@ -1,16 +1,15 @@
-@import '#main-styles/variables.scss';
+@import '#main-styles/colorVariables';
 
 .wrapper{
-  border: 2px solid $active-buttons;
+  border: 2px solid $buttonNext;
   padding: .3rem 2rem;
   border-radius: .5rem;
   font-size: 1.5rem;
   background-color: transparent;
-  color: $active-buttons;
+  color: $buttonNext;
 }
 
 .wrapper:hover{
-  // background-color: red;
   border: 2px solid white;
   color: white;
   box-shadow: 0 0 7px 3px white;

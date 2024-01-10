@@ -11,7 +11,8 @@ type PropsT = {
 
 }
 const MessageModal: React.FC<PropsT> = () => {
-  const { state, dispatch } = useContext(GameContext)
+  const { state } = useContext(GameContext)
+
   const componentRef = useRef<React.ReactNode>(<div></div>) 
 
   switch (true) {
@@ -24,7 +25,7 @@ const MessageModal: React.FC<PropsT> = () => {
       componentRef.current = <MessageNoWinner />
       break
     case state.modalWindow === Modal_message_types_E.WINNER:
-      componentRef.current = <MessageWinner /> 
+      componentRef.current = <MessageWinner/> 
       break
   }
 

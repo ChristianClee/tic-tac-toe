@@ -29,7 +29,8 @@ export enum Tic_tac_opponent_names_E{
   PLAYER_2 = 'Player 2',
   PLAYER = 'Player',
   COMPUTER = 'Computer',
-  UNKNOWN = 'Unknown',
+  LINK_1 = 'link 1',
+  LINK_2 = 'link 2',
 }
 
 export enum Modal_message_types_E {

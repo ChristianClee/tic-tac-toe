@@ -10,7 +10,8 @@
   gap: .5rem;
   align-items: center;
   padding: 1.5rem;
-
+  border: 2px solid black;
+  border-radius: .5rem;
 }
 .title{
   font-size: 2rem;
@@ -24,10 +25,9 @@
   position: relative;
   min-width: 10rem;
   min-height: 10rem;
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: .5rem;
-
-  background-color: white;
+  background-color: $messageIconBg;
 
 }
 .container{

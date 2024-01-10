@@ -3,7 +3,7 @@ import style from './DashBoard.module.scss'
 import Player from '#archichecture/component/player/Player';
 import { GameContext } from '#reducers/tic-tac-toe/context'
 import { CommonContext } from '#reducers/common/context'
-import Button_1 from '#archichecture/ui/button_1/Button_1';
+import Button_1 from '#archichecture/ui/button_1/ButtonOne';
 import ChoiceMode from '#archichecture/component/choice_mode/ChoiceMode';
 import Burger from '#archichecture/ui/burger_button/Burger';
 import {
@@ -20,9 +20,8 @@ type Props = {
 const DashBoard: React.FC<Props> = () => {
   const {state} = useContext(GameContext)
   const {state: commonState} = useContext(CommonContext)
-  // console.log(state.modeGame)
   const [names, setNames] = useState<Tic_tac_opponent_names_E[]>([])
-  // console.log(names)
+
   useCustomHook(setNames)
 
 

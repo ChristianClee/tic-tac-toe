@@ -32,8 +32,8 @@ export const useCustomHook: CustomHook = (dispatch) => {
         ];
       case Tic_tac_opponent_E.HUMAN:
         return [
-          Tic_tac_opponent_names_E.UNKNOWN,
-          Tic_tac_opponent_names_E.UNKNOWN,
+          Tic_tac_opponent_names_E.LINK_1,
+          Tic_tac_opponent_names_E.LINK_2,
         ];
     }
   }

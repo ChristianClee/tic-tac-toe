@@ -3,6 +3,10 @@ import { GameContext } from "#reducers/tic-tac-toe/context";
 import { CoreTicTac } from "./coreGame";
 import { Utilits as Utl } from "./utilits";
 import { ActionType_E } from "#reducers/tic-tac-toe/actions";
+import {
+  Modal_message_types_E,
+} from "#constants/tic-tac-toe-base/constNames";
+
 
 export function useCustomHook() {
   const { state, dispatch } = useContext(GameContext);
@@ -21,18 +25,26 @@ export function useCustomHook() {
         type: ActionType_E.SetLastWinner,
         payload: win,
       });
+      dispatch({
+        type: ActionType_E.TuggleModalWindow,
+        payload: Modal_message_types_E.WINNER,
+      });
     }
     if (res) {
       dispatch({
         type: ActionType_E.SetWinnerCombinatios,
         payload: res,
       });
-      if (nowin) {
-        dispatch({
-          type: ActionType_E.SetnoWinner,
-          payload: true,
-        });
-      }
+    }
+    if (nowin) {
+      dispatch({
+        type: ActionType_E.SetnoWinner,
+        payload: true,
+      });
+      dispatch({
+        type: ActionType_E.TuggleModalWindow,
+        payload: Modal_message_types_E.NOWINNER,
+      });
     }
   }, [state.sells]);
 }

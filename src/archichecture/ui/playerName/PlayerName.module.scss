@@ -1,0 +1,46 @@
+@import '#main-styles/colorVariables';
+
+.wrapper1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: .3rem 2rem;
+  font-size: 1.5rem;
+  border-radius: .5rem;
+  color: $crossFigure;
+}
+.wrapper2{
+  color: $scopeDashdoard;
+}
+
+
+.one{
+  position: absolute;
+  width: 20%;
+  height: 2px;
+  display: block;
+  background: $gridCollor;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: moving 3s linear infinite alternate 0s forwards;
+}
+
+
+.two{
+  width: 30%;
+  animation: moving 3s linear infinite alternate 0s forwards;
+  background: $lineMenu;
+}
+  
+
+@keyframes moving{
+  0%{
+    width:100%
+  }
+  100%{
+    width: 20%;
+  }
+}

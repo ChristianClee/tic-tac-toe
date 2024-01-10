@@ -6,7 +6,7 @@ import { useCustomHook } from './customHooks'
 import { CSSTransition } from 'react-transition-group'
 
 import MessageModal from '#archichecture/component/messageModal/MessageModal';
-import MessageNoWinner from '#archichecture/component/messageNoWinner/MessageNoWinner';
+// import MessageNoWinner from '#archichecture/component/messageNoWinner/MessageNoWinner';
 import './transition.scss'
 
 
@@ -14,6 +14,8 @@ type PropsT = {
 
 }
 const ModalGameHuman: React.FC<PropsT> = () => {
+  //state.modalWindow is the trigger for calling modal message
+  
   const { state, dispatch } = useContext(GameContext)
   
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -36,7 +38,7 @@ const ModalGameHuman: React.FC<PropsT> = () => {
 
       <CSSTransition
         in={myIN}
-        timeout={700}
+        timeout={2000}
         classNames={"style"}
         mountOnEnter={true}
         unmountOnExit={true}

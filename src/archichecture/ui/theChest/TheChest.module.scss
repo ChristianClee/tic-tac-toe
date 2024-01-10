@@ -9,7 +9,7 @@
   width: 60%;
   height: 60%;
   transition: fill;
-  
+  // z-index: 2;
 }
 
 .activeWrapp{
@@ -18,9 +18,9 @@
 
 
 @keyframes moving{
-   0%{top: 55%}
-  25%{left: 43%}
-  50%{top: 44%}
-  75%{left: 55%}
+   0%{top: 42%}
+  25%{left: 54%}
+  50%{top: 54%}
+  75%{left: 48%}
 }
  

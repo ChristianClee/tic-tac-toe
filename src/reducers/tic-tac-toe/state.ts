@@ -48,8 +48,7 @@ export const initialGameState: Game_I = {
   lastWinner: null,
   winnerCombination: [],
   modeGame: Tic_tac_opponent_E.NOLINK,
-  // modalWindow: null,
-  //!!! the comment above here is main than bellow
-  modalWindow: Modal_message_types_E.NOWINNER,
+  modalWindow: null,
+  // modalWindow: Modal_message_types_E.WINNER,
   menuLink: MenuLink_E.GAMEMODE,
 };
