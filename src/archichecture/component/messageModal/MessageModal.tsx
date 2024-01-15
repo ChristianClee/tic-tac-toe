@@ -5,6 +5,7 @@ import { Tic_tac_opponent_E,Modal_message_types_E } from '#constants/tic-tac-toe
 import MessageNoWinner from '#archichecture/component/messageNoWinner/MessageNoWinner';
 // import MessageModal from '#archichecture/component/messageModal/MessageModal';
 import MessageWinner from '#archichecture/component/messageWinner/MessageWinner';
+import MessageCreateGame from '../messageCreateGame/MessageCreateGame';
 
 
 type PropsT = {
@@ -17,9 +18,10 @@ const MessageModal: React.FC<PropsT> = () => {
 
   switch (true) {
     case state.modalWindow === Modal_message_types_E.ADDTOGAME: 
-      // componentRef.current = <MessageNoWinner />
+        componentRef.current = <MessageNoWinner />
       break
     case state.modalWindow === Modal_message_types_E.CREATEGAME:
+        componentRef.current = <MessageCreateGame/>
       break
     case state.modalWindow === Modal_message_types_E.NOWINNER:
       componentRef.current = <MessageNoWinner />

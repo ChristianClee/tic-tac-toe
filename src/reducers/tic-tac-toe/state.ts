@@ -17,22 +17,22 @@ export interface Sell_I {
 }
 
 export interface Mode_I {
-  currentGame: Tic_tac_modes_E; // it shows current mode of game, at this moment the aviable modes are 3 to 3 sells, 5 to 5
-  sells: Sell_I[];
+  currentGame: Tic_tac_modes_E; // it shows current mode of game, at this moment the aviable modes are 3 to 3 sells, 5 to 5               <duplicate in server>
+  sells: Sell_I[]; // it shows all sells                                                                                                  <duplicate in server>
 }
 export interface Game_I extends Mode_I {
-  typeMarker: boolean; // it shows who must to make move, true means <cross> false means <zerro>
+  typeMarker: boolean; // it shows who must to make move, true means <cross> false means <zerro>                                          <duplicate in server>
   scope: {
-    // it shows scope between two players
+    // it shows scope between two players                                                                                                 <duplicate in server>
     [Winner_E.CROSS]: number;
     [Winner_E.ZERRO]: number;
   };
   // limitGame: number; // it shows how many games will be played
-  noWinner: boolean; // it shows is winner in game or not
-  lastWinner: null | Winner_E;
-  winnerCombination: number[]; // it shows winner combinations
-  modeGame: Tic_tac_opponent_E; // it shows who will be opponent,
-  modalWindow: null | Modal_message_types_E; // it shows modal window
+  noWinner: boolean; // it shows is winner in game or not                                                                                 <duplicate in server>
+  lastWinner: null | Winner_E; //                                                                                                         <duplicate in server>
+  winnerCombination: number[]; // it shows winner combinations                                                                            <duplicate in server>
+  modeGame: Tic_tac_opponent_E; // it shows who will be opponent,                                                                         
+  modalWindow: null | Modal_message_types_E; // it shows modal window                                                                     
   menuLink: MenuLink_E; // it shows currunt page in memu, !!! it should change to Lint react router v6 at the future
 }
 
@@ -48,7 +48,7 @@ export const initialGameState: Game_I = {
   lastWinner: null,
   winnerCombination: [],
   modeGame: Tic_tac_opponent_E.NOLINK,
-  modalWindow: null,
-  // modalWindow: Modal_message_types_E.WINNER,
+  // modalWindow: null,
+  modalWindow: Modal_message_types_E.CREATEGAME,
   menuLink: MenuLink_E.GAMEMODE,
 };

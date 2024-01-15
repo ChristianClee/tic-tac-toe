@@ -88,9 +88,6 @@ const TicTacToeAll: React.FC<PropsT> = () => {
         </div>
       </MovingButtons>
 
-      
-      
-
     </div>
   );
 }

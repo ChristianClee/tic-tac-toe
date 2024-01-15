@@ -10,7 +10,7 @@ $itemAssideGap: .15rem;
   justify-content: flex-end;
 }
 
-label{
+.colorLabel{
   width: 5rem;
   height: $itemHight;
   position: relative;
@@ -22,7 +22,7 @@ label{
 ;
   cursor: pointer;
 }
-label::after{
+.colorLabel::after{
   content: "";
   width: $sizeToggle;
   height: $sizeToggle;
@@ -35,23 +35,23 @@ label::after{
   position: absolute;
   background: linear-gradient(180deg, #ffbf00,rgb(123, 93, 3));
 }
-input{
+.colorInput{
   width: 0rem;
   height: 0rem;
   display: none;
 }
 
-input:checked + label{
+.colorInput:checked + .colorLabel{
   background: #414040;
 }
 
-input:checked + label::after{
+.colorInput:checked + .colorLabel::after{
   background: linear-gradient(180deg, rgb(0, 195, 255),rgb(0, 51, 63));
   left: calc(100% - $itemAssideGap);
   transform: translateY(-50%) translateX(-100%);
 }
 
-label:active:after{
+.colorLabel:active:after{
   width: $sizeToggle + .5rem;
 }
 

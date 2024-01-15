@@ -1,0 +1,17 @@
+.dddd-enter {
+  left: 100vw;
+}
+
+.dddd-enter-active {
+  left: 0;
+  transition: 750ms;
+}
+
+.dddd-exit {
+  left: 0;
+}
+
+.dddd-exit-active {
+  left: 100vw;
+  transition: 750ms;
+}/*# sourceMappingURL=transition.css.map */

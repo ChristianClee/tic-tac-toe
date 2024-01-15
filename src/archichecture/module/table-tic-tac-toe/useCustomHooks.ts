@@ -13,7 +13,6 @@ export function useCustomHook() {
 
   useEffect(() => {
     const win = CoreTicTac.getWinner(state.sells, state.currentGame); // it determines game winner, CROSS or ZERRO
-    console.log(win);
     const res = CoreTicTac.getWinnerResult(state.sells, win, state.currentGame); // it determines result of winner
     const nowin = CoreTicTac.isNoWinner(state.sells, win);
     // const computer = CoreTicTac.isComputer(state.modeGame, state.typeMarker);

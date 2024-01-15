@@ -1,0 +1,28 @@
+.wrapper {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 2;
+}
+
+.activeWrapp {
+  animation: moving 3s linear infinite alternate 0s forwards;
+}
+
+@keyframes moving {
+  0% {
+    top: 55%;
+  }
+  25% {
+    left: 43%;
+  }
+  50% {
+    top: 44%;
+  }
+  75% {
+    left: 55%;
+  }
+}/*# sourceMappingURL=Crown.module.css.map */

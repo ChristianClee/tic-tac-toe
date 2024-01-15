@@ -1,0 +1,18 @@
+.style-enter {
+  top: -100vh;
+}
+
+.style-enter-active {
+  top: 0;
+  transition-delay: 1000ms;
+  transition-duration: 700ms;
+}
+
+.style-exit {
+  top: 0;
+}
+
+.style-exit-active {
+  top: -100vh;
+  transition: 700ms;
+}/*# sourceMappingURL=transition.css.map */

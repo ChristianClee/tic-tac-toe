@@ -28,10 +28,11 @@ const LightDarkController: React.FC<PropsT> = () => {
       className={ style.wrapper }
     >
       <input type="checkbox" id="lightDarkController"
+        className={style.colorInput}
         value={state.lightDarkTheme}
         onClick={onclick}
       />
-      <label htmlFor='lightDarkController'></label>
+      <label className={style.colorLabel} htmlFor='lightDarkController'></label>
 
 
     </div>

@@ -1,0 +1,11 @@
+.wrapper {
+  min-width: 14rem;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.765);
+  height: 3rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}/*# sourceMappingURL=Button_2.module.css.map */

@@ -9,13 +9,23 @@ import LightDarkController from '#archichecture/component/ligihtDarkController/L
 import { Light_dark_themes_E } from '#constants/common-base/constNames'
 import { dark,light } from '#constants/colors'
 
-
+window.addEventListener('beforeunload', () => {
+  // Notify the server when the user is leaving the site
+  // socket.emit('userLeave');
+  fetch('localhost:5000', {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify('user left site')
+  })
+})
 
 const App: React.FC = () => {
   const [state, dispatch] = useReducer(CommonReduser, initialCommon)
   const darkLightTheme = Light_dark_themes_E.DARK === state.lightDarkTheme
 
-
+  
 
 
   return (

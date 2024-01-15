@@ -1,0 +1,17 @@
+.abcd-enter {
+  left: 100%;
+}
+
+.abcd-enter-active {
+  left: 0;
+  transition: 750ms;
+}
+
+.abcd-exit {
+  left: 0;
+}
+
+.abcd-exit-active {
+  left: -100%;
+  transition: 750ms;
+}/*# sourceMappingURL=transition.css.map */
