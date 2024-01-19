@@ -39,3 +39,9 @@ export enum Modal_message_types_E {
   CREATEGAME = "createGane",
   ADDTOGAME = "addToGame",
 }
+
+export enum Session_st_E {
+  GAMEKEY = 'gameKey',
+  PLAYERKEY = 'playerKey'
+}
+

@@ -17,7 +17,7 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
         ...state,
         typeMarker: !state.typeMarker,
       };
-    
+
     case ActionType_E.SetMarker:
       return {
         ...state,
@@ -69,6 +69,11 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
       return {
         ...state,
         lastWinner: action.payload,
+      };
+    case ActionType_E.TuggleSessionStorage:
+      return {
+        ...state,
+        sessionStorage: action.payload,
       };
 
     default:

@@ -5,7 +5,7 @@ import style from './ButtonFetchig.module.scss'
 
 
 type PropsT = {
-  dispatches: React.Dispatch<React.SetStateAction<string>>[];
+  func: ()=>void;
   fetchFunc: () => void;
 
 }
@@ -13,13 +13,11 @@ type PropsT = {
 
 
 
-const ButtonFetchig: React.FC<PropsT> = ({ dispatches, fetchFunc }) => {
+const ButtonFetchig: React.FC<PropsT> = ({ func, fetchFunc }) => {
 
   function onclick() {
     fetchFunc()
-    dispatches.forEach(dispatch => {
-      dispatch('')
-    })
+    func()
   }
 
 
@@ -29,7 +27,9 @@ const ButtonFetchig: React.FC<PropsT> = ({ dispatches, fetchFunc }) => {
       onClick={() => { 
         onclick()
       }}
-    >Create</button>
+    >
+      Create
+    </button>
   );
 }
 export default ButtonFetchig;

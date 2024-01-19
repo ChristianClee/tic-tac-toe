@@ -9,7 +9,7 @@ import {
 export enum ActionType_E {
   ChengeGame, // it change count of table's sells, <3 to 3> or <5 to 5> for example
   TuggleMarker, // it defines the queue , whitch is move now
-  SetMarker, 
+  SetMarker,
   SetMarkerItem, // it shows options of the sells, witch of them is CROSS and witch is ZERRO
   SetWinnerCombinatios, // it defines the combinations whitch is winning
   ChangeScope, // it chenge scope of geme
@@ -18,6 +18,7 @@ export enum ActionType_E {
   ChangeMenuLink,
   SetnoWinner, // if no winner is in game, it shows it
   SetLastWinner, // it shows who was winner in last game
+  TuggleSessionStorage, // it shows is empty session storage
 }
 
 export interface ChengeGame_I {
@@ -77,6 +78,11 @@ export interface SetLastWinner_I {
   payload: null | Winner_E;
 }
 
+export interface TuggleSessionStorage_I {
+  type: ActionType_E.TuggleSessionStorage;
+  payload: boolean;
+}
+
 
 
 
@@ -91,4 +97,5 @@ export type GameActions_T =
   | TuggleModalWindow_I
   | ChangeMenuLink_I
   | SetnoWinner_I
-  | SetLastWinner_I;
+  | SetLastWinner_I
+  | TuggleSessionStorage_I;

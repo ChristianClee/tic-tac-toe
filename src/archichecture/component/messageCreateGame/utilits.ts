@@ -1,17 +1,23 @@
 import { getPathServer } from "#commonUtilits/getPathServer";
 import { headersGet } from "#constants/fetching/headers/headers";
+import { GameActions_T, ActionType_E } from "#reducers/tic-tac-toe/actions";
+import { Session_st_E } from "#constants/tic-tac-toe-base/constNames";
+
 
 const serverPath = getPathServer();
 
 interface responce_I {
-  uniqKey: string | null;
-  error?: string;
+  gameKey?: string | undefined;
+  playerKey?: string | undefined;
+  error?: string | undefined;
 }
 
 
-
-
-export function fetchCreateGame(addPath: string, dateToServer: string ) {
+export function fetchCreateGame(
+  addPath: string,
+  dateToServer: string,
+  dispatch: React.Dispatch<GameActions_T>
+) {
   return () => {
     fetch(serverPath + addPath, {
       method: "POST",
@@ -20,22 +26,29 @@ export function fetchCreateGame(addPath: string, dateToServer: string ) {
     })
       .then((res) => res.json())
       .then((res: responce_I) => {
-        const uniqKey = sessionStorage.getItem("myGameKey");
-        if (!uniqKey && !res.error && res.uniqKey) {
-          sessionStorage.setItem("myGameKey", res.uniqKey);
-        }
-        if (uniqKey) {
-          console.warn(`${uniqKey} is existing`);
+        const gameKey = sessionStorage.getItem(Session_st_E.GAMEKEY);
+        const playerKey = sessionStorage.getItem(Session_st_E.PLAYERKEY);
+
+        if (
+          !gameKey &&
+          !playerKey &&
+          !res.error &&
+          res.gameKey &&
+          res.playerKey
+        ) {
+          sessionStorage.setItem(Session_st_E.GAMEKEY, res.gameKey);
+          sessionStorage.setItem(Session_st_E.PLAYERKEY, res.playerKey);
+          dispatch({
+            type: ActionType_E.TuggleSessionStorage,
+            payload: true,
+          });
         }
         if (res.error) {
           console.warn(res.error);
         }
-        if (!res.uniqKey) {
-          console.warn(`uniqKey is ${res.uniqKey}`);
-        }
       })
       .catch((e) => {
-        console.log(e.message);
+        console.log(e);
       });
   };
 }

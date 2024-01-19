@@ -1,0 +1,16 @@
+.wrapper{
+  width: 100%;
+  padding: .5rem 1rem;
+  height: 15rem;
+  // background: rgb(143, 116, 116);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  // overflow-y: scroll;
+  border: 1px solid black;
+}
+.wrapper::-webkit-scrollbar {
+  width: 0px; /* Ширина всего элемента навигации */
+  // background-color: transparent;
+}
