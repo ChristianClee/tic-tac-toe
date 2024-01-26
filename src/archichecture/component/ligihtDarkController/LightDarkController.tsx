@@ -11,8 +11,10 @@ type PropsT = {
 
 }
 const LightDarkController: React.FC<PropsT> = () => {
-  
+
   const { state, dispatch } = useContext(CommonContext)
+
+
   
   function onclick() {
     dispatch({
@@ -24,9 +26,7 @@ const LightDarkController: React.FC<PropsT> = () => {
 
 
   return (
-    <div
-      className={ style.wrapper }
-    >
+    <div className={style.wrapper}>
       <input type="checkbox" id="lightDarkController"
         className={style.colorInput}
         value={state.lightDarkTheme}

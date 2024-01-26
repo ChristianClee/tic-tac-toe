@@ -70,11 +70,6 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
         ...state,
         lastWinner: action.payload,
       };
-    case ActionType_E.TuggleSessionStorage:
-      return {
-        ...state,
-        sessionStorage: action.payload,
-      };
 
     default:
       return state;

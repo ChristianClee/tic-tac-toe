@@ -18,7 +18,6 @@ export enum ActionType_E {
   ChangeMenuLink,
   SetnoWinner, // if no winner is in game, it shows it
   SetLastWinner, // it shows who was winner in last game
-  TuggleSessionStorage, // it shows is empty session storage
 }
 
 export interface ChengeGame_I {
@@ -78,10 +77,7 @@ export interface SetLastWinner_I {
   payload: null | Winner_E;
 }
 
-export interface TuggleSessionStorage_I {
-  type: ActionType_E.TuggleSessionStorage;
-  payload: boolean;
-}
+
 
 
 
@@ -98,4 +94,3 @@ export type GameActions_T =
   | ChangeMenuLink_I
   | SetnoWinner_I
   | SetLastWinner_I
-  | TuggleSessionStorage_I;

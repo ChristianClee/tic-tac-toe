@@ -67,6 +67,14 @@ export interface ServerData_I
   uniqKeyPlayer_2: string | null;
 }
 
+export interface Options_I
+  extends Mode_I,
+    TypeMarker_I,
+    Scope_I,
+    NoWinner_I,
+    WinnerCombination_I,
+    LastWinner_I {}
+
 
 export interface Game_I
   extends Mode_I,
@@ -78,7 +86,6 @@ export interface Game_I
   modeGame: Tic_tac_opponent_E; // it shows who will be opponent,
   modalWindow: null | Modal_message_types_E; // it shows modal window
   menuLink: MenuLink_E; // it shows currunt page in memu, !!! it should change to Lint react router v6 at the future
-  sessionStorage: boolean; // it shows is localStorage filled or not
 }
 
 export const initialGameState: Game_I = {
@@ -96,5 +103,4 @@ export const initialGameState: Game_I = {
   // modalWindow: null,
   modalWindow: Modal_message_types_E.ADDTOGAME,
   menuLink: MenuLink_E.GAMEMODE,
-  sessionStorage: false, 
 };

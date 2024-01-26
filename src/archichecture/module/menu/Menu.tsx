@@ -19,7 +19,7 @@ import Button_3 from '#archichecture/ui/button_3/Button_3';
 
 import ModalGameHuman from '#archichecture/module/modal-game-human/ModalGameHuman';
 import MovingButtons from '#archichecture/component/movingButtons/MovingButtons';
-
+import { socket } from "#App" 
 
 type PropsT = {
 
@@ -48,9 +48,23 @@ const Menu: React.FC<PropsT> = () => {
           state_game.menuLink === MenuLink_E.INTERACTIVEGAME ?
             <>
               <div className={style.choise}>
-                <RadioInput text={"no link"} index={Tic_tac_opponent_E.NOLINK} modeGame={state_game.modeGame}/> 
-                <RadioInput text={"computer"} index={Tic_tac_opponent_E.COMPUTER} modeGame={state_game.modeGame}/> 
-                <RadioInput text={"friend"} index={Tic_tac_opponent_E.HUMAN} modeGame={state_game.modeGame} /> 
+                <RadioInput
+                  text={"no link"}
+                  index={Tic_tac_opponent_E.NOLINK}
+                  modeGame={state_game.modeGame}
+                  func={socket.deleteGame}
+                /> 
+                <RadioInput
+                  text={"computer"}
+                  index={Tic_tac_opponent_E.COMPUTER}
+                  modeGame={state_game.modeGame}
+                  func={socket.deleteGame}
+                /> 
+                <RadioInput
+                  text={"one to one"}
+                  index={Tic_tac_opponent_E.HUMAN}
+                  modeGame={state_game.modeGame}
+                /> 
                 {
                   <MovingButtons myIn={humanStyle}>
                     <div className={style.connectBlock}>

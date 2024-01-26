@@ -54,7 +54,7 @@ const TicTacToeAll: React.FC<PropsT> = () => {
       nameTwo = { name: names[1], state: true, status: false }
       break
   }
-  // console.log(nameOne)
+
 
 
 

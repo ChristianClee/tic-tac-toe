@@ -9,50 +9,58 @@ import { initialGameState } from '#reducers/tic-tac-toe/state'
 import { ActionType_E } from '#reducers/tic-tac-toe/actions'
 import Menu from '#archichecture/module/menu/Menu';
 import ModalGameHuman from '#archichecture/module/modal-game-human/ModalGameHuman';
-import { getPathServer } from '#commonUtilits/getPathServer'
-import { headersGet } from "#constants/fetching/headers/headers";
-import { Session_st_E } from "#constants/tic-tac-toe-base/constNames";
+import { socket } from '#App'
+import { Session_st_E, Tic_tac_opponent_E } from "#constants/tic-tac-toe-base/constNames";
+
 
 
 const Table_page: React.FC = () => {
   const [state, dispatch] = useReducer(TicTacReducer, initialGameState)
-
+  useEffect(() => {
+    window.addEventListener("beforeunload", () => {
+      const PLAYERKEY = Session_st_E.PLAYERKEY
+      const GAMEKEY = Session_st_E.GAMEKEY
+      sessionStorage.removeItem(PLAYERKEY)
+      sessionStorage.removeItem(GAMEKEY)
+    })
+    
+  }, [])
 
   useEffect(() => {
-    // console.log(state.sessionStorage)
-    const domainPath = getPathServer()
-    const addPath: string = process.env.REACT_APP_PATH_DELETE_GAME || ""
-    const playerKey =  sessionStorage.getItem(Session_st_E.PLAYERKEY)
-    const gameKey = sessionStorage.getItem(Session_st_E.GAMEKEY)
-    const data = { playerKey, gameKey }
+
+    let stopInterval: NodeJS.Timer | null = null
+    function clearInt(){
+      if (stopInterval) {
+          clearTimeout(stopInterval)
+        }
+    }
+    function makeJson(obj:any):string {
+      return JSON.stringify(obj)
+    }
+
+    let lastVal = socket.gameData
     
-    // console.log('data', {...data})
+    switch (state.modeGame) {
+      case Tic_tac_opponent_E.HUMAN:
+        stopInterval = setInterval(() => {
+          const res = makeJson(lastVal) !== makeJson(socket.gameData)
 
-    function fetching() {
-      console.log('keys', playerKey && gameKey)
-      console.log('path', domainPath + addPath)
-
-      if (playerKey && gameKey) {
-        fetch(domainPath + addPath, {
-        method: "POST",
-        headers: headersGet,
-        body: JSON.stringify({...data})
-      })
-      sessionStorage.removeItem(Session_st_E.GAMEKEY)
-      sessionStorage.removeItem(Session_st_E.PLAYERKEY)
-      }
+          if (res) {
+            console.log(socket.gameData)
+            lastVal = socket.gameData
+          } 
+        },1000)
+      break
+      
+      default:
+        clearInt()
     }
     
-    window.addEventListener('beforeunload', () => {
-      fetching()
-    })
 
+ 
+    return () => clearInt()
 
-
-
-  }, [state.sessionStorage])
-
-
+  },[state.modeGame])
 
   return (
     <GameContext.Provider value={{state, dispatch}}>

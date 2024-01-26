@@ -14,9 +14,10 @@ type PropsT = {
   index: Tic_tac_modes_E | Tic_tac_opponent_E;
   modeGame: Tic_tac_modes_E | Tic_tac_opponent_E;
   modalWindow?: true
+  func?: ()=> void
 }
 
-const RadioInput: React.FC<PropsT> = ({ text, index, modeGame }) => {
+const RadioInput: React.FC<PropsT> = ({ text, index, modeGame, func }) => {
   const { state, dispatch } = useContext(GameContext)
   const result:boolean = index === modeGame
  
@@ -38,10 +39,12 @@ const RadioInput: React.FC<PropsT> = ({ text, index, modeGame }) => {
         //@ts-ignore
         payload: index,
       })
+      if (func) {
+        func()
+      }
       
     }
   }
-
 
 
   return (

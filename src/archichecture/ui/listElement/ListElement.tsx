@@ -4,17 +4,25 @@ import {ListElem_I} from '#archichecture/component/messageAddToGame/types'
 
 type PropsT = {
   elem: ListElem_I
-  func: ()=>void
+  func: () => void
+  func2: React.Dispatch<React.SetStateAction<string>>
+  choise: string
 }
-const ListElement: React.FC<PropsT> = ({ elem, func }) => {
-  // const [style, setStyle] = useState<boolean>(false)
+const ListElement: React.FC<PropsT> = ({ elem, func, func2, choise }) => {
+  const styleActive = choise === elem._id
+
+  function onclick() {
+    func()
+    func2(elem._id)
+  }
+
   return (
     <div
-      className={style.wrapper}
-      onClick={()=>func()}
+      className={styleActive? [style.wrapper, style.active].join(" ") : style.wrapper}
+      onClick={onclick}
     >
-      <p>{elem.gameName}</p>
-      <p>{elem.time}</p>
+      <p className={style.gameName}>{elem.gameName}</p>
+      <p className={style.time}>{elem.time}</p>
     </div>
   );
 }

@@ -6,17 +6,19 @@ import style from './ButtonFetchig.module.scss'
 
 type PropsT = {
   func: ()=>void;
-  fetchFunc: () => void;
-
+  webFunc?: () => void;
+  text: string;
 }
 
 
 
 
-const ButtonFetchig: React.FC<PropsT> = ({ func, fetchFunc }) => {
+const ButtonFetchig: React.FC<PropsT> = ({ func, webFunc, text }) => {
 
   function onclick() {
-    fetchFunc()
+    if (webFunc) {
+      webFunc()
+    }
     func()
   }
 
@@ -28,7 +30,7 @@ const ButtonFetchig: React.FC<PropsT> = ({ func, fetchFunc }) => {
         onclick()
       }}
     >
-      Create
+      {text}
     </button>
   );
 }

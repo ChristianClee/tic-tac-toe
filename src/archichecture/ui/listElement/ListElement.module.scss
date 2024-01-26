@@ -3,7 +3,16 @@
   border-radius: .5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem .5rem;
+  // background-color: rgb(217, 187, 15);
+  font-size: 1.3rem;
 }
-.gameName{}
+.active{
+  background-color: rgb(217, 187, 15);
+}
+
+.gameName{
+  
+}
 .time{}
