@@ -7,7 +7,7 @@ import {
 
 
 type CustomHook = (
-  dispatch: React.Dispatch<React.SetStateAction<Tic_tac_opponent_names_E[]>>
+  dispatch: React.Dispatch<React.SetStateAction<string[]>>
 ) => void;
 
 export const useCustomHook: CustomHook = (dispatch) => {
@@ -15,26 +15,24 @@ export const useCustomHook: CustomHook = (dispatch) => {
 
   useEffect(() => {
     dispatch(getNames());
-  }, [state.modeGame]);
-
-
-  function getNames() {
-    switch (state.modeGame) {
-      case Tic_tac_opponent_E.NOLINK:
-        return [
-          Tic_tac_opponent_names_E.PLAYER_1,
-          Tic_tac_opponent_names_E.PLAYER_2,
-        ];
-      case Tic_tac_opponent_E.COMPUTER:
-        return [
-          Tic_tac_opponent_names_E.PLAYER,
-          Tic_tac_opponent_names_E.COMPUTER,
-        ];
-      case Tic_tac_opponent_E.HUMAN:
-        return [
-          Tic_tac_opponent_names_E.LINK_1,
-          Tic_tac_opponent_names_E.LINK_2,
-        ];
+    function getNames() {
+      switch (state.modeGame) {
+        case Tic_tac_opponent_E.NOLINK:
+          return [
+            Tic_tac_opponent_names_E.PLAYER_1,
+            Tic_tac_opponent_names_E.PLAYER_2,
+          ];
+        case Tic_tac_opponent_E.COMPUTER:
+          return [
+            Tic_tac_opponent_names_E.PLAYER,
+            Tic_tac_opponent_names_E.COMPUTER,
+          ];
+        case Tic_tac_opponent_E.HUMAN:
+          const playerOne = state.optionsOneToOne.playerOneName;
+          const playerTwo = state.optionsOneToOne.playerTwoName;
+          console.log(playerOne, playerTwo);
+          return [playerOne, playerTwo];
+      }
     }
-  }
+  }, [state.modeGame, state.optionsOneToOne]);
 };

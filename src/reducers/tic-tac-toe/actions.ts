@@ -1,9 +1,10 @@
-import { Mode_I, Sell_I } from "./state";
+import { Mode_I, Sell_I, Player_E, Game_status_E } from "./state";
 import {
   Winner_E,
   Tic_tac_opponent_E,
   MenuLink_E,
-  Modal_message_types_E
+  Modal_message_types_E,
+  Tic_tac_modes_E
 } from "#constants/tic-tac-toe-base/constNames";
 
 export enum ActionType_E {
@@ -18,11 +19,19 @@ export enum ActionType_E {
   ChangeMenuLink,
   SetnoWinner, // if no winner is in game, it shows it
   SetLastWinner, // it shows who was winner in last game
+  PlayerNumber, //
+  StatusGameInteractive, // it shows status of interactive game
+  SetPlayerOneName, // it shows playerOne's  name of interactive game
+  SetPlayerTwoName, // it shows playerTwo's  name of interactive game
 }
 
+// export interface ChengeGame_I {
+//   type: ActionType_E.ChengeGame;
+//   payload: Mode_I;
+// }
 export interface ChengeGame_I {
   type: ActionType_E.ChengeGame;
-  payload: Mode_I;
+  payload: Tic_tac_modes_E;
 }
 
 export interface TuggleMarker_I {
@@ -77,6 +86,27 @@ export interface SetLastWinner_I {
   payload: null | Winner_E;
 }
 
+export interface PlayerNumber_I {
+  type: ActionType_E.PlayerNumber;
+  payload: null | Player_E;
+}
+
+export interface StatusGameInteractive_I {
+  type: ActionType_E.StatusGameInteractive;
+  payload: null | Game_status_E;
+}
+
+export interface SetPlayerOneName_I {
+  type: ActionType_E.SetPlayerOneName;
+  payload: string;
+}
+
+export interface SetPlayerTwoName_I {
+  type: ActionType_E.SetPlayerTwoName;
+  payload: string;
+}
+
+
 
 
 
@@ -94,3 +124,7 @@ export type GameActions_T =
   | ChangeMenuLink_I
   | SetnoWinner_I
   | SetLastWinner_I
+  | PlayerNumber_I
+  | StatusGameInteractive_I
+  | SetPlayerOneName_I
+  | SetPlayerTwoName_I

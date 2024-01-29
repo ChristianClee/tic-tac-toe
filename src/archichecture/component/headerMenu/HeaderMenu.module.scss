@@ -10,13 +10,14 @@
 }
 
 .link{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   padding: 1rem 1rem;
   border-radius: .5rem;
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .activeLink{
-  background-color: rgba(0, 0, 0, 0.642);
-  color: $active-buttons;
+  background-color: rgba(0, 0, 0, 0.688);
+  color: white;
 }

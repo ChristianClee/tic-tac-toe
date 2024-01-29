@@ -9,7 +9,7 @@ import { CreateGame_T, WebSocketInit } from "#commonUtilits/websocket";
 // const domain = serverPath.Http()
 
 type fetchCreateGame_T = (dateToServer: CreateGame_T,
-  func:(obj:CreateGame_T)=>void) => () => void;
+  func:(obj : CreateGame_T)=>void) => () => void;
 
 
 export const fetchCreateGame:fetchCreateGame_T= (dateToServer, func) => {

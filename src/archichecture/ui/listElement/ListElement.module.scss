@@ -8,11 +8,14 @@
   // background-color: rgb(217, 187, 15);
   font-size: 1.3rem;
 }
+
 .active{
   background-color: rgb(217, 187, 15);
 }
 
-.gameName{
-  
+.gameName span{
+  color: red;
 }
-.time{}
+.time{
+  color: red;
+}

@@ -12,10 +12,13 @@ type PropsT = {
   state: Game_I;
   dispatch: React.Dispatch<GameActions_T>;
 }
-const ButtonFour:React.FC<PropsT> = ({text, func, state, dispatch}) => {
+const ButtonFour: React.FC<PropsT> = ({ text, func, state, dispatch }) => {
+  function onclick() {
+    func(state,dispatch)
+  }
   return (
     <button
-      onClick={()=>{func(state,dispatch)}}
+      onClick={onclick}
       className={style.wrapper}
     >
       {text}

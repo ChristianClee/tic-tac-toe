@@ -1,5 +1,5 @@
 .abcd-enter {
-  left: 100%;
+  left: 110%;
 }
 .abcd-enter-active {
   left: 0;
@@ -9,6 +9,6 @@
   left: 0;
 }
 .abcd-exit-active {
-  left: -100%;
+  left: -110%;
   transition: 750ms;
 }

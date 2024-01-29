@@ -1,15 +1,32 @@
-.style-enter {
+.style2-enter {
   top: -100vh;
 }
-.style-enter-active {
+.style2-enter-active {
   top: 0;
-  transition-delay: 1000ms;
+  transition-delay: 1300ms;
   transition-duration: 700ms;
 }
-.style-exit {
+.style2-exit {
   top: 0;
 }
-.style-exit-active {
+.style2-exit-active {
+  top: -100vh;
+  transition: 700ms;
+}
+
+
+.style1-enter {
+  top: -100vh;
+}
+.style1-enter-active {
+  top: 0;
+  transition-delay: 50ms;
+  transition-duration: 700ms;
+}
+.style1-exit {
+  top: 0;
+}
+.style1-exit-active {
   top: -100vh;
   transition: 700ms;
 }

@@ -1,0 +1,74 @@
+$heightElem: 3rem;
+
+.wrapper {
+  position: relative;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  display: flex;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.colomn {
+  // border: 1px solid black;
+  height: 100%;
+  width: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.element {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  display: block;
+  width: 100%;
+  background-color: rgb(255, 102, 0);
+  border-radius: 0.2rem;
+}
+
+.one {
+  animation: one 1.5s linear infinite alternate forwards;
+}
+.two {
+  animation: one 1.5s linear infinite alternate 300ms forwards;
+}
+.three {
+  animation: one 1.5s linear infinite alternate 600ms forwards;
+}
+.four {
+  animation: one 1.5s linear infinite alternate 900ms forwards;
+}
+.five {
+  animation: one 1.5s linear infinite alternate 1200ms forwards;
+}
+.six {
+  animation: one 1.5s linear infinite alternate 1500ms forwards;
+}
+.seven {
+  animation: one 1.5s linear infinite alternate 1800ms forwards;
+}
+.eight {
+  animation: one 1.5s linear infinite alternate 2100ms forwards;
+}
+.nine {
+  animation: one 1.5s linear infinite alternate 2400ms forwards;
+}
+
+@keyframes one {
+  0% {
+    height: 1rem;
+  }
+  75%{
+    height: 1rem;
+  }
+  100% {
+    height: 80%;
+  }
+}

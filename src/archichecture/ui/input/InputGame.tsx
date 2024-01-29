@@ -15,12 +15,15 @@ const InputGame: React.FC<PropsT> = ({ placeholder, dispatch, text, id }) => {
 
 
   return (
-      <div className={style.wrapper}>
+    <div
+      className={style.wrapper}
+      onClick={(e) => e.stopPropagation()}
+    >
         <textarea
           required={true}
           className={style.nameGame}
           id={id}
-          maxLength={20}
+          maxLength={15}
           onChange={(e)=>onchange(e)}
           value={text}
         ></textarea>

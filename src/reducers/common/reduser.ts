@@ -9,6 +9,12 @@ export function CommonReduser(state: Common_I, action: CommonActions_T) {
         ...state,
         burgerState: !state.burgerState,
       };
+    
+    case ActionCommon_E.CloseBurger:
+      return {
+        ...state,
+        burgerState: false,
+      };
 
     case ActionCommon_E.TuggleLightDarkThemes:
       return {

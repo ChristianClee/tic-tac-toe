@@ -52,6 +52,11 @@ export enum Game_status_E {
   PLAYING = 'playing'
 }
 
+export enum Player_E {
+  PLAYERONE = 'playerOne',
+  PLAYERTWO = 'playerTwo'
+}
+
 
 export interface ServerData_I
   extends Mode_I,
@@ -86,6 +91,13 @@ export interface Game_I
   modeGame: Tic_tac_opponent_E; // it shows who will be opponent,
   modalWindow: null | Modal_message_types_E; // it shows modal window
   menuLink: MenuLink_E; // it shows currunt page in memu, !!! it should change to Lint react router v6 at the future
+  playerNumber: null | Player_E; // it shows who should to move in human to human mode game
+  optionsOneToOne: {
+    gameStatus: Game_status_E | null;
+    playerOneName: string;
+    playerTwoName: string;
+    gameName: string;
+  };
 }
 
 export const initialGameState: Game_I = {
@@ -99,8 +111,17 @@ export const initialGameState: Game_I = {
   noWinner: false,
   lastWinner: null,
   winnerCombination: [],
-  modeGame: Tic_tac_opponent_E.NOLINK,
-  // modalWindow: null,
-  modalWindow: Modal_message_types_E.ADDTOGAME,
+  modeGame: Tic_tac_opponent_E.NOLINK, //* initial
+  // modeGame: Tic_tac_opponent_E.HUMAN,
+  modalWindow: null, //* initial
+  // modalWindow: Modal_message_types_E.ADDTOGAME,
   menuLink: MenuLink_E.GAMEMODE,
+  playerNumber: null, // *initial
+  // playerNumber: Player_E.PLAYERONE,
+  optionsOneToOne: {
+    gameStatus: null,
+    playerOneName: "",
+    playerTwoName: "",
+    gameName: "",
+  },
 };

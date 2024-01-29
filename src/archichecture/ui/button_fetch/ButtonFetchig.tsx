@@ -26,7 +26,8 @@ const ButtonFetchig: React.FC<PropsT> = ({ func, webFunc, text }) => {
   return (
     <button
       className={style.wrapper}
-      onClick={() => { 
+      onClick={(e) => {
+        e.preventDefault()
         onclick()
       }}
     >

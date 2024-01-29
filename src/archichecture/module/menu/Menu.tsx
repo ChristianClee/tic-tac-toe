@@ -29,39 +29,47 @@ const Menu: React.FC<PropsT> = () => {
   const { state: state_game, dispatch: dispatch_game } = useContext(GameContext)
   const humanStyle = state_game.modeGame === Tic_tac_opponent_E.HUMAN
 
-  // console.log(state_game.modeGame)
+
   return (
     <div
       className={state.burgerState? [style.wrapper, style.activeWrap].join(' ') : style.wrapper}
     >
       <HeaderMenu/>
 
-      {/* <ChoiceMode>
-      </ChoiceMode> */}
       {
         state_game.menuLink === MenuLink_E.GAMEMODE ?
           <div className={style.choise}>
-            <RadioInput text={"3 to 3"} index={Tic_tac_modes_E.ONE} modeGame={state_game.currentGame} />
-            <RadioInput text={"5 to 5"} index={Tic_tac_modes_E.TWO} modeGame={state_game.currentGame} />
+            <RadioInput
+              text={"3 to 3"}
+              index={Tic_tac_modes_E.ONE}
+              modeGame={state_game.currentGame}
+              func={socket.deleteGame}
+            />
+            <RadioInput
+              text={"5 to 5"}
+              index={Tic_tac_modes_E.TWO}
+              modeGame={state_game.currentGame}
+              func={socket.deleteGame}
+            />
           </div>
           :
           state_game.menuLink === MenuLink_E.INTERACTIVEGAME ?
             <>
               <div className={style.choise}>
                 <RadioInput
-                  text={"no link"}
+                  text={"no opponent"}
                   index={Tic_tac_opponent_E.NOLINK}
                   modeGame={state_game.modeGame}
                   func={socket.deleteGame}
                 /> 
                 <RadioInput
-                  text={"computer"}
+                  text={"against to computer"}
                   index={Tic_tac_opponent_E.COMPUTER}
                   modeGame={state_game.modeGame}
                   func={socket.deleteGame}
                 /> 
                 <RadioInput
-                  text={"one to one"}
+                  text={"against to user"}
                   index={Tic_tac_opponent_E.HUMAN}
                   modeGame={state_game.modeGame}
                 /> 
@@ -73,7 +81,7 @@ const Menu: React.FC<PropsT> = () => {
                         status={false}
                         typeMessage={Modal_message_types_E.CREATEGAME} />
                       <Button_3
-                        text={'add to game'}
+                        text={'join to game'}
                         status={false}
                         typeMessage={Modal_message_types_E.ADDTOGAME}
                       />
@@ -88,7 +96,6 @@ const Menu: React.FC<PropsT> = () => {
             null
       }
       
-
 
       <div className={style.burgerPosition}>
         <Burger isBurger={!state.burgerState} color={'menu'} />

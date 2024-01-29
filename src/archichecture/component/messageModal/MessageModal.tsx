@@ -15,20 +15,23 @@ type PropsT = {
 const MessageModal: React.FC<PropsT> = memo( () => {
   const { state } = useContext(GameContext)
 
+
+
+
   const componentRef = useRef<React.ReactNode>(<div></div>) 
 
   switch (true) {
     case state.modalWindow === Modal_message_types_E.ADDTOGAME: 
-        componentRef.current = <MessageAddToGame />
+      componentRef.current = <MessageAddToGame />
       break
     case state.modalWindow === Modal_message_types_E.CREATEGAME:
-        componentRef.current = <MessageCreateGame/>
+      componentRef.current = <MessageCreateGame />
       break
     case state.modalWindow === Modal_message_types_E.NOWINNER:
       componentRef.current = <MessageNoWinner />
       break
     case state.modalWindow === Modal_message_types_E.WINNER:
-      componentRef.current = <MessageWinner/> 
+      componentRef.current = <MessageWinner /> 
       break
   }
 

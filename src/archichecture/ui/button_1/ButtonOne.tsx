@@ -7,14 +7,23 @@ import { GameActions_T } from "#reducers/tic-tac-toe/actions";
 type PropsT = {
   text: string;
   func: ResetFunc_T;
+  func2?: () => void;
   state: Game_I;
+  
   dispatch: React.Dispatch<GameActions_T>;
 }
-const ButtonOne:React.FC<PropsT> = ({text, func, state, dispatch}) => {
+const ButtonOne: React.FC<PropsT> = ({ text, func, func2, state, dispatch }) => {
+  function onclick() {
+    func(state, dispatch)
+    if (func2) {
+      func2()
+    }
+    
+  }
   return (
     <button
       className={style.wrapper}
-      onClick={() => func(state, dispatch)}
+      onClick={onclick}
     >
       {text}
     </button>

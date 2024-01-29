@@ -20,7 +20,7 @@ type Props = {
 const DashBoard: React.FC<Props> = () => {
   const {state} = useContext(GameContext)
   const {state: commonState} = useContext(CommonContext)
-  const [names, setNames] = useState<Tic_tac_opponent_names_E[]>([])
+  const [names, setNames] = useState<string[]>([])
 
   useCustomHook(setNames)
 

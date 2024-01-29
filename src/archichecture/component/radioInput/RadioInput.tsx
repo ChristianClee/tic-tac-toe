@@ -25,13 +25,17 @@ const RadioInput: React.FC<PropsT> = ({ text, index, modeGame, func }) => {
   function onclick() {
     if (index.toUpperCase() in Tic_tac_modes_E) {
       resetGame(state, dispatch)
+
       dispatch({
         type: ActionType_E.ChengeGame,
         //@ts-ignore
-        payload: { currentGame:index, sells: Utilits.getCountSells(index)}
+        payload: index
       })
-      
-
+      dispatch({
+        type: ActionType_E.SetMarkerItem,
+        //@ts-ignore
+        payload: Utilits.getCountSells(index)
+      })
     } else if (index.toUpperCase() in Tic_tac_opponent_E) {
       resetGame(state, dispatch)
       dispatch({
@@ -39,11 +43,12 @@ const RadioInput: React.FC<PropsT> = ({ text, index, modeGame, func }) => {
         //@ts-ignore
         payload: index,
       })
-      if (func) {
-        func()
-      }
+      
       
     }
+    if (func) {
+        func()
+      }
   }
 
 
@@ -51,7 +56,7 @@ const RadioInput: React.FC<PropsT> = ({ text, index, modeGame, func }) => {
     <div className={style.wrapper}>
 
       <div className={style.button}>
-        <Button_2 text={text} />
+        <Button_2 text={text} func={onclick} />
       </div>
       
       <div className={style.radio}>

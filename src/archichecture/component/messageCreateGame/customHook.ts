@@ -1,30 +1,43 @@
 import { useContext } from "react";
 import { GameContext } from "#reducers/tic-tac-toe/context";
-import {Options_I} from "#reducers/tic-tac-toe/state";
+import { CreateGame_T } from "#commonUtilits/websocket";
 
-export function useCustomHook(): Options_I {
+export function useCustomHook(): CreateGame_T {
   const { state, dispatch } = useContext(GameContext);
   const {
     currentGame,
     sells,
     typeMarker,
-    scope,
+    optionsOneToOne,
+    lastWinner,
     noWinner,
     winnerCombination,
-    modeGame,
-    lastWinner,
   } = state;
 
   const options = {
-    currentGame,
+    _id: null,
+    gameName: "",
+    playerOne: null,
+    playerTwo: null,
+    playerOneName: optionsOneToOne.playerOneName,
+    playerTwoName: optionsOneToOne.playerTwoName,
     sells,
     typeMarker,
-    scope,
+    gameStatus: optionsOneToOne.gameStatus,
+    currentGame,
+    lastWinner,
     noWinner,
     winnerCombination,
-    modeGame,
-    lastWinner,
   };
 
   return options;
 }
+
+
+export function getEmptyDate() {
+  return {
+    
+  }
+
+}
+

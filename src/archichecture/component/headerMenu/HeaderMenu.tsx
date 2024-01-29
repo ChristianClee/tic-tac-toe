@@ -26,11 +26,11 @@ const HeaderMenu: React.FC<PropsT> = () => {
       <div
         className={first ? [style.link, style.activeLink].join(' ') : style.link}
         onClick={() => onclick(MenuLink_E.GAMEMODE)}
-      >Mode game</div>
+      >Game mode</div>
       <div
         className={second ? [style.link, style.activeLink].join(' ') : style.link}
         onClick={() => onclick(MenuLink_E.INTERACTIVEGAME)}
-      >Interractive Game</div>
+      >Interractive game</div>
     </div>
   );
 }

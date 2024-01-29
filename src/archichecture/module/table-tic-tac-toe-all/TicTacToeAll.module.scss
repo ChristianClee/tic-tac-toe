@@ -1,6 +1,7 @@
 .wrapper{
   overflow: hidden;
   border: 1px dashed white;
+  position: relative;
 }
 
 .buttonsBlock{
@@ -8,7 +9,6 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  // margin-top: 1rem;
 }
 
 .noWinner{
@@ -25,4 +25,16 @@
 .queue{
   top: 50%;
   position: relative;
+}
+
+.lock{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: move 2s linear infinite alternate-reverse;
+}
+
+@keyframes move {
+  0%{bottom: 18%;}
+  100%{bottom: 23%}
 }

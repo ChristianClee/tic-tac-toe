@@ -1,6 +1,6 @@
 import { serverPath } from '#commonUtilits/getPathServer'
-import { Session_st_E } from "#constants/tic-tac-toe-base/constNames";
-import { Game_status_E, Options_I } from '#reducers/tic-tac-toe/state';
+import { Session_st_E, Tic_tac_modes_E, Winner_E } from "#constants/tic-tac-toe-base/constNames";
+import { Game_status_E, Mode_I, Options_I, Sell_I } from '#reducers/tic-tac-toe/state';
 import { time } from 'console';
 
 // import WebSocket from "ws";
@@ -10,6 +10,7 @@ enum MessageSocket_E {
   CREATE = 'creategame',
   JOIN = 'joingame',
   DELETE = 'deletegame',
+  SELLS = 'sells'
 }
 
 
@@ -24,19 +25,26 @@ export interface Client_I {
   gameKey: string;
 }
 
-export type CreateGame_T = {
+export interface CreateGame_T {
+  _id: string | null;
+  sells: Sell_I[];
+  typeMarker: boolean;
   gameName: string;
-  playerOneName: string;
-  options: Options_I;
-};
-
-export interface GameData_I extends CreateGame_T {
-  _id: string;
   playerOne: string | null;
   playerTwo: string | null;
-  playerTwoName: string | null;
-  gameStatus: Game_status_E;
-}
+  playerOneName: string;
+  playerTwoName: string;
+  noWinner: boolean;
+  winnerCombination: number[];
+  lastWinner: null | Winner_E;
+
+  gameStatus: Game_status_E | null;
+  currentGame: Tic_tac_modes_E;
+};
+
+
+
+
 
 
 
@@ -56,7 +64,7 @@ export class WebSocketInit {
   private GAMEKEY: Session_st_E.GAMEKEY;
   public isConnect: boolean;
   // public gameStatus: GameStatus_E | null;
-  public gameData: GameData_I | null;
+  public gameData: CreateGame_T | null;
 
   constructor() {
     this.domain = serverPath.Ws();
@@ -72,6 +80,7 @@ export class WebSocketInit {
     this.deleteGame = this.deleteGame.bind(this);
     this.joinGame = this.joinGame.bind(this);
     this.takeMesStatusConnect = this.takeMesStatusConnect.bind(this);
+    this.sendSells = this.sendSells.bind(this);
   }
   private _initSocketEvent() {
     this._openEvent();
@@ -104,10 +113,10 @@ export class WebSocketInit {
       return;
     }
   }
-  public joinGame(_id: string) {
+  public joinGame(obj: { _id: string; playerTwoName: string}) {
     const isStorage = this.isStorage();
     if (!isStorage) {
-      const data = JSON.stringify([MessageSocket_E.JOIN, { _id }]);
+      const data = JSON.stringify([MessageSocket_E.JOIN, obj]);
       this._sentMessage(data);
     } else {
       return;
@@ -123,6 +132,12 @@ export class WebSocketInit {
       this._sentMessage(data);
     }
   }
+  public sendSells(obj: {}) {
+    // public sendSells(obj: { sells: Sell_I[]; typeMarker: boolean }) {
+    // const data = JSON.stringify([MessageSocket_E.SELLS, obj]);
+    const data = JSON.stringify([MessageSocket_E.SELLS, { ...obj }]);
+    this._sentMessage(data);
+  }
   private isStorage() {
     const playerKey = sessionStorage.getItem(this.PLAYERKEY);
     const gameKey = sessionStorage.getItem(this.GAMEKEY);
@@ -133,7 +148,7 @@ export class WebSocketInit {
     this.socket.onmessage = (event) => {
       const message:
         | [GiveMessage_E.TOSTORAGE, Client_I]
-        | [GiveMessage_E.TOCONNECT, GameData_I] = JSON.parse(event.data);
+        | [GiveMessage_E.TOCONNECT, CreateGame_T] = JSON.parse(event.data);
       switch (message[0]) {
         case GiveMessage_E.TOSTORAGE:
           this.takeMesSaveToStor(message[1]);
@@ -151,7 +166,7 @@ export class WebSocketInit {
     sessionStorage.setItem(this.PLAYERKEY, obj[Session_st_E.PLAYERKEY]);
     sessionStorage.setItem(this.GAMEKEY, obj[Session_st_E.GAMEKEY]);
   }
-  private takeMesStatusConnect(obj: GameData_I) {
+  private takeMesStatusConnect(obj: CreateGame_T) {
     this.gameData = obj;
   }
 }

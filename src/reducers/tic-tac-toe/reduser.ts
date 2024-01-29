@@ -8,8 +8,7 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
     case ActionType_E.ChengeGame:
       return {
         ...state,
-        currentGame: action.payload.currentGame,
-        sells: action.payload.sells,
+        currentGame: action.payload,
       };
 
     case ActionType_E.TuggleMarker:
@@ -70,8 +69,43 @@ export function TicTacReducer(state:Game_I, action: GameActions_T){
         ...state,
         lastWinner: action.payload,
       };
+    
+    case ActionType_E.PlayerNumber:
+      return {
+        ...state,
+        playerNumber: action.payload,
+      };
+    
+    case ActionType_E.StatusGameInteractive:
+      return {
+        ...state,
+        optionsOneToOne: {
+          ...state.optionsOneToOne,
+          gameStatus: action.payload,
+        }
+      };
+    
+    case ActionType_E.SetPlayerOneName:
+      return {
+        ...state,
+        optionsOneToOne: {
+          ...state.optionsOneToOne,
+          playerOneName: action.payload,
+        },
+      };
+    
+    case ActionType_E.SetPlayerTwoName:
+      return {
+        ...state,
+        optionsOneToOne: {
+          ...state.optionsOneToOne,
+          playerTwoName: action.payload,
+        },
+      };
 
+    
     default:
       return state;
+
   }
 }
