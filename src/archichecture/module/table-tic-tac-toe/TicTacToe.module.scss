@@ -4,10 +4,10 @@
 .wrapper{
   width: 80vw;
   height: 80vw;
+  max-width: 20rem;
+  max-height: 20rem;
   border-radius: .5rem;
-  
   display: grid;
-  
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: .25rem;
   grid-row-gap: .25rem;

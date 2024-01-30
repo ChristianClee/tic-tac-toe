@@ -8,13 +8,12 @@ type PropsT = {
   children: React.ReactNode,
   delayOn?: number,
   delayOff?: number,
+  appear?: boolean,
 }
-const MovingButtons: React.FC<PropsT> = ({ myIn, children, delayOn = 0, delayOff = 0 }) => {
+const MovingButtons: React.FC<PropsT> = ({ myIn, children, delayOn = 0, delayOff = 0, appear = false }) => {
 
+  const styleTransition = appear? 'apeaR' : 'abcd'
   const [aaa, setAaa] = useState<boolean>(false)
-  
-
-
   switch (myIn) {
     case true:
       if (delayOn === 0) {
@@ -41,14 +40,12 @@ const MovingButtons: React.FC<PropsT> = ({ myIn, children, delayOn = 0, delayOff
   }
   
 
-
-
   return (
     <CSSTransition
       in={aaa}
       timeout={750}
         
-      classNames={'abcd'}
+      classNames={styleTransition}
       mountOnEnter={true}
       unmountOnExit={true}
     >

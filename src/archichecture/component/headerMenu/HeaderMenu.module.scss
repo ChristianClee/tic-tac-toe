@@ -21,3 +21,9 @@
   background-color: rgba(0, 0, 0, 0.688);
   color: white;
 }
+
+@media(min-width: $L){
+  .wrapper{
+    display: none;
+  }
+}

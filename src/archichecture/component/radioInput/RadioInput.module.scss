@@ -3,12 +3,6 @@
 .wrapper{
   color: $active-buttons;
   position: relative;
-  // display: grid;
-  
-  // grid-template-columns: repeat(2, auto);
-  // grid-template-rows: repeat(2, auto);
-  // grid-column-gap: 1rem;
-  // grid-row-gap: 0px;
 }
 
 .window{
@@ -48,7 +42,6 @@
   border-radius: .25rem;
   box-shadow: 0 0 .5rem .35rem rgb(255, 255, 255);
   animation: moving 1s linear infinite alternate 0s forwards;
-  
 }
 
 
@@ -64,5 +57,23 @@
   }
   75%{
     left: 41%;
+  }
+}
+
+
+@media(min-width: $L){
+  .window{
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .marker{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    display: block;
+    width: .7rem;
+    height: .7rem;
   }
 }

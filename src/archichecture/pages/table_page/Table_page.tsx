@@ -23,9 +23,9 @@ const Table_page: React.FC = () => {
     <GameContext.Provider value={{state, dispatch}}>
       <div className={style.wrapper}>
         <div className={style.flexCont}>
-          <DashBoard />
           <TicTacToeAll />
           
+          <DashBoard />
           <Menu />
           <ModalGameHuman />
         </div>

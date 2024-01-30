@@ -12,3 +12,21 @@
   left: -110%;
   transition: 750ms;
 }
+
+
+.apeaR-enter {
+  opacity: 0;
+}
+.apeaR-enter-active {
+  opacity: 1;
+  transition:  750ms;
+}
+.apeaR-exit {
+  opacity: 1;
+}
+.apeaR-exit-active {
+  opacity: 0;
+  transition: opacity 750ms;
+}
+
+

@@ -133,12 +133,11 @@ const TicTacToeAll: React.FC<PropsT> = () => {
         </div>
       </MovingButtons>
    
-        <MovingButtons myIn={accessGame} >
-          <ConnectWallpapar text={'You need create game or join to aviable on this mode game'}>
-            <Lock className={style.lock} />
-          </ConnectWallpapar>
-        </MovingButtons>
-        
+      <MovingButtons myIn={accessGame} appear={true}>
+        <ConnectWallpapar text={'You need create game or join to aviable on this mode game'}>
+          <Lock className={style.lock} />
+        </ConnectWallpapar>
+      </MovingButtons>
       
       <MovingButtons myIn={disconectGame} >
         <ConnectWallpapar text={'Your opponent leave this game, create new one'}>

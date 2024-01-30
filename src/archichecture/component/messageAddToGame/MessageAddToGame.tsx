@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useRef } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import style from './MessageAddToGame.module.scss'
 import ListGames from '../listGames/ListGames';
 import {GameContext} from '#reducers/tic-tac-toe/context';
@@ -32,7 +32,7 @@ const MessageAddToGame: React.FC<PropsT> = () => {
     },
   ]
   const [stileBtn, setStileBtn] = useState<boolean>(false)
-  const [gamesServer, setGamesServer] = useState<ListElem_I[]>(a)
+  const [gamesServer, setGamesServer] = useState<ListElem_I[]>([])
   const [namePlayer, setNamePlayer] = useState<string>('')
   const [choise, setChoise] = useState<string>('')
 

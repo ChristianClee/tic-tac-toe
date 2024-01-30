@@ -1,3 +1,5 @@
+@import '#main-styles/variables';
+
 .wrapper{
   min-width: 14rem;
   font-size: 1.5rem;
@@ -8,5 +10,20 @@
   align-items: center;
   justify-content: center;
   color: white;
-  
 }
+
+
+@media(min-width:$L){
+  .wrapper{
+    font-size: 1.4rem;
+    height: 2.5rem;
+    display: flex;
+    &:hover{
+       background-color: rgba(160, 158, 158, 0.765);
+       color: black;
+    }
+  }
+}
+
+
+
