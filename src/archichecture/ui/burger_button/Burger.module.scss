@@ -4,8 +4,9 @@
   position: relative;
   width: 4rem;
   height: 2.5rem;
-  border: 1px dashed white;
+  // border: 1px dashed white;
   cursor: pointer;
+  z-index: 2;
 }
 
 .button{

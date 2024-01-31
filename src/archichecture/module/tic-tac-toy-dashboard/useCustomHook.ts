@@ -30,8 +30,12 @@ export const useCustomHook: CustomHook = (dispatch) => {
         case Tic_tac_opponent_E.HUMAN:
           const playerOne = state.optionsOneToOne.playerOneName;
           const playerTwo = state.optionsOneToOne.playerTwoName;
-          console.log(playerOne, playerTwo);
-          return [playerOne, playerTwo];
+          if (playerOne && playerTwo) {
+            return [playerOne, playerTwo];
+          } else {
+            return ["", ""];
+          }
+          
       }
     }
   }, [state.modeGame, state.optionsOneToOne]);

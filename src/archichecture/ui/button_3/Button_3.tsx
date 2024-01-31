@@ -9,10 +9,11 @@ import {
 type PropsT = {
   text: string;
   status: boolean;
-  typeMessage: Modal_message_types_E
+  typeMessage: Modal_message_types_E,
+  func?: ()=>void
 }
 
-const Button_3: React.FC<PropsT> = ({ text, status, typeMessage}) => {
+const Button_3: React.FC<PropsT> = ({ text, status, typeMessage, func}) => {
   const {state, dispatch} = useContext(GameContext)
 
 
@@ -20,6 +21,15 @@ const Button_3: React.FC<PropsT> = ({ text, status, typeMessage}) => {
     <button
       className={status ? [style.wrapper, style.activeWrap].join(' ') : style.wrapper}
       onClick={() => {
+
+        if (func) {
+          func()
+          console.log("deleteeee")
+        }
+        dispatch({
+          type: ActionType_E.StatusGameInteractive,
+          payload: null
+        })
         dispatch({
           type: ActionType_E.TuggleModalWindow,
           payload: typeMessage,

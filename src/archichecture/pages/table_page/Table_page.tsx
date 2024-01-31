@@ -28,8 +28,10 @@ const Table_page: React.FC = () => {
           <DashBoard />
           <Menu />
           <ModalGameHuman />
+          
         </div>
       </div>
+      
     </GameContext.Provider>
   );
 }

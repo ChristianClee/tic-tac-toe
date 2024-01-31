@@ -23,11 +23,30 @@ html{
   width: 100%;
   padding-top: 1px;
   transition: .5s;
-
+  padding: 1rem 1rem;
 }
+.header{
+  // border: 1px solid black;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header{
+  width: 100%;
+  max-width: 35rem;
+}
+
+
+
+
 
 @media(min-width: $L){
   html{
     font-size: 110%;
   }
+  .header{
+  // border: 1px solid black;
+  max-width: 900px;
+  margin: 0 auto;
+}
 }

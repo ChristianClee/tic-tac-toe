@@ -1,4 +1,4 @@
-import React,{ useContext, useEffect, useState } from 'react';
+import React,{ useContext, useState } from 'react';
 import style from './DashBoard.module.scss'
 import Player from '#archichecture/component/player/Player';
 import { GameContext } from '#reducers/tic-tac-toe/context'

@@ -36,14 +36,14 @@ const MessageModal: React.FC<PropsT> = memo( () => {
   }
 
   return (
-    <div
-      className={style.wrapper}
-      onClick={(e) => {
-        e.stopPropagation()
-      }}
-    >
-     {componentRef.current} 
-    </div>
+    <>
+      <div
+        className={style.wrapper}
+      >
+      {componentRef.current} 
+      </div>
+    </>
+
   );
 })
 export default MessageModal;

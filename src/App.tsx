@@ -30,7 +30,9 @@ const App: React.FC = () => {
       <div className="App"
         style={darkLightTheme ? dark : light}
       >
-        <LightDarkController/>
+        <header className='header'>
+          <LightDarkController/>
+        </header>
         <Table_page/>
         {/* <Background/> */}
       </div>

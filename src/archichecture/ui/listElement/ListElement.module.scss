@@ -1,21 +1,35 @@
-.wrapper{
+@import "#main-styles/colorVariables";
+.wrapper {
   border: 1px solid black;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem .5rem;
+  padding: 1rem 0.5rem;
   // background-color: rgb(217, 187, 15);
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
-.active{
-  background-color: rgb(217, 187, 15);
+.active {
+  // background-color: $messageIconBg;
+  background-color: $messageIconBg;
+  & .gameName {
+    color: $scopeDashdoard;
+  }
+  & .gameName span {
+    color: $inscriptDashdoard;
+  }
+  & .time {
+    color: $inscriptDashdoard;
+  }
 }
 
-.gameName span{
-  color: red;
+.gameName span {
+  color: rgb(147, 147, 147);
+  font-size: 1.1rem;
 }
-.time{
-  color: red;
+.time {
+  color: rgb(147, 147, 147);
+  font-size: 1.1rem;
 }

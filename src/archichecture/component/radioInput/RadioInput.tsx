@@ -44,11 +44,16 @@ const RadioInput: React.FC<PropsT> = ({ text, index, modeGame, func }) => {
         payload: index,
       })
       
+    
       
     }
     if (func) {
         func()
-      }
+    }
+    dispatch({
+        type: ActionType_E.TuggleModalWindow,
+        payload: null
+      })
   }
 
 

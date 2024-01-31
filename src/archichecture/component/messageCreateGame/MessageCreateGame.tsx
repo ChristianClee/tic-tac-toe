@@ -10,6 +10,8 @@ import { socket } from '#App'
 import { useCustomHook } from './customHook';
 import { Game_status_E } from '#reducers/tic-tac-toe/state';
 import Loader from '#archichecture/ui/loader/Loader';
+import CrossClose from '../crossClose/CrossClose';
+
 
 type PropsT = {
 }
@@ -61,61 +63,65 @@ const MessageCreateGame: React.FC<PropsT> = () => {
 
 
   return (
-    <div
-      className={style.wrapper}
-    > 
-      <h3 className={style.title}>
-        {
-          isloader2? "Waiting opponent" : "Create new game"
-        }
-      </h3>
-      <MovingButtons myIn={!isLoader()} >
-        <div className={style.inputs}>
-          <InputGame
-              placeholder={'Game name'}
-              dispatch={setGameName}
-              text={gameName}
-              id={'gameName'}
+    <div className={style.wrapper}>
+      <CrossClose/>
+      <div
+        className={style.body}
+        onClick={(e) => {
+          e.stopPropagation()
+        }}
+      > 
+        <h3 className={style.title}>
+          {
+            isloader2? "Waiting opponent" : "Create new game"
+          }
+        </h3>
+        <MovingButtons myIn={!isLoader()} >
+          <div className={style.inputs}>
+            <InputGame
+                placeholder={'Game name'}
+                dispatch={setGameName}
+                text={gameName}
+                id={'gameName'}
+              />
+            <InputGame
+              placeholder={'Player name'}
+              dispatch={setYourName}
+              text={playerOneName}
+              id={'yourName'}
             />
-          <InputGame
-            placeholder={'Player name'}
-            dispatch={setYourName}
-            text={playerOneName}
-            id={'yourName'}
-          />
-        </div>
-      </MovingButtons>
+          </div>
+        </MovingButtons>
 
-      
-
-      {
-         isloader1 && 
-        
+        {
+          isloader1 && 
           <div className={style.containerLoader}>
             <Loader/> 
           </div>
-      }
-      <div className={style.btnContainer} >
-        <MovingButtons myIn={btnAvialble} >
-          <ButtonFetchig
-            func={dispatchInputs}
-            webFunc={fetchCreateGame(dateToServer, socket.createGame)}
-            text={'Create'}
-          />
-        </MovingButtons>
-        <MovingButtons myIn={isLoader()} delayOn={1000} >
-           <ButtonFetchig
-            func={dispatchLoader}
-            webFunc={socket.deleteGame}
-            text={'Leave'}
-          />
-      </MovingButtons>
+        }
+        <div className={style.btnContainer} >
+          <MovingButtons myIn={btnAvialble} >
+            <ButtonFetchig
+              func={dispatchInputs}
+              webFunc={fetchCreateGame(dateToServer, socket.createGame)}
+              text={'Create'}
+            />
+          </MovingButtons>
+          <MovingButtons myIn={isLoader()} delayOn={1000} >
+            <ButtonFetchig
+              func={dispatchLoader}
+              webFunc={socket.deleteGame}
+              text={'Leave'}
+            />
+          </MovingButtons>
 
+        </div>
+
+        
+        
       </div>
-
-      
-      
     </div>
+    
   );
 }
 export default MessageCreateGame;

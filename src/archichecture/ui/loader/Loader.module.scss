@@ -1,4 +1,5 @@
 $heightElem: 3rem;
+@import "#main-styles/colorVariables";
 
 .wrapper {
   position: relative;
@@ -29,8 +30,10 @@ $heightElem: 3rem;
   transform: translateY(-50%);
   display: block;
   width: 100%;
-  background-color: rgb(255, 102, 0);
+  // background-color: rgb(255, 102, 0);
+  background-color: $messageIconBg;
   border-radius: 0.2rem;
+  border: 1px solid $scopeDashdoard;
 }
 
 .one {
@@ -65,10 +68,10 @@ $heightElem: 3rem;
   0% {
     height: 1rem;
   }
-  75%{
+  75% {
     height: 1rem;
   }
   100% {
-    height: 80%;
+    height: 100%;
   }
 }

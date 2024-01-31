@@ -1,12 +1,18 @@
-.wrapper{
+@import "#main-styles/colorVariables";
+
+.wrapper {
+}
+.body {
   width: 100%;
   min-height: 23.5rem;
   padding: 1rem 1rem;
-  background-color: white;
+  background-color: $interactiveModalMessage;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid black;
   // overflow-y: scroll;
 }
 // .wrapper::-webkit-scrollbar{
@@ -18,7 +24,7 @@
 //   border: 1px solid #050c26; /* Оформление границ бегунка */
 // }
 
-.title{
+.title {
   text-align: center;
   font-size: 1.8rem;
 }

@@ -11,6 +11,7 @@ import {Modal_message_types_E} from '#constants/tic-tac-toe-base/constNames'
 import {joinGame} from "./utilits"
 import { socket } from "#App" 
 import InputGame from '#archichecture/ui/input/InputGame';
+import CrossClose from '../crossClose/CrossClose';
 
  
 type PropsT = {
@@ -52,9 +53,12 @@ const MessageAddToGame: React.FC<PropsT> = () => {
     const utl: string = domain + addPath
       
     if (state.modalWindow === Modal_message_types_E.ADDTOGAME) {
-      fetch(utl)
-        .then(res => res.json())
-        .then(res => setGamesServer(res))
+      setTimeout(() => {
+        fetch(utl)
+          .then(res => res.json())
+          .then(res => setGamesServer(res))
+      },200)
+  
       }
   }, [state.modalWindow])
   
@@ -71,12 +75,15 @@ const MessageAddToGame: React.FC<PropsT> = () => {
 
 
   return (
-    <div
-      className={style.wrapper}
-      onClick={() => {
-        btnFuncTrue(false)
-      }}
-    >
+    <div className={style.wrapper}>
+      <CrossClose/>
+      <div
+        className={style.body}
+        onClick={(e) => {
+          e.stopPropagation()
+          btnFuncTrue(false)
+        }}
+      >
       <h3 className={style.title}>join to the game</h3>
       {
         !!gamesServer.length
@@ -91,7 +98,11 @@ const MessageAddToGame: React.FC<PropsT> = () => {
           text={"join"}
         />
       </MovingButtons>
+      </div>
     </div>
+    
+ 
+    
   );
 }
 export default MessageAddToGame;

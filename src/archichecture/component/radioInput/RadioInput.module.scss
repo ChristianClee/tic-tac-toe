@@ -1,35 +1,33 @@
-@import '#main-styles/variables.scss';
+@import "#main-styles/variables.scss";
 
-.wrapper{
+.wrapper {
   color: $active-buttons;
   position: relative;
 }
 
-.window{
+.window {
   position: relative;
   width: 3rem;
   height: 3rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   overflow: hidden;
-  background-color: rgba(26, 26, 26, 0.87);
+  background-color: rgba(0, 0, 0, 0.765);
   display: flex;
   justify-content: center;
 }
 
-
-.radio{
+.radio {
   position: absolute;
   right: -1.5rem;
   top: 0;
 }
 
-.button{
+.button {
   transform: translateX(-2rem);
 }
 
-
-.marker{
+.marker {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,41 +37,40 @@
   width: 1rem;
   height: 1rem;
   background-color: rgb(156, 235, 255);
-  border-radius: .25rem;
-  box-shadow: 0 0 .5rem .35rem rgb(255, 255, 255);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.5rem 0.35rem rgb(255, 255, 255);
   animation: moving 1s linear infinite alternate 0s forwards;
 }
 
-
-@keyframes moving{
-  0%{
+@keyframes moving {
+  0% {
     top: 59%;
   }
-  25%{
+  25% {
     left: 61%;
   }
-  50%{
-    top:41%
+  50% {
+    top: 41%;
   }
-  75%{
+  75% {
     left: 41%;
   }
 }
 
-
-@media(min-width: $L){
-  .window{
+@media (min-width: $L) {
+  .window {
     width: 2.5rem;
     height: 2.5rem;
+    border: 1px solid white;
   }
-  .marker{
+  .marker {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 
     display: block;
-    width: .7rem;
-    height: .7rem;
+    width: 0.7rem;
+    height: 0.7rem;
   }
 }

@@ -21,6 +21,7 @@ import ModalGameHuman from '#archichecture/module/modal-game-human/ModalGameHuma
 import MovingButtons from '#archichecture/component/movingButtons/MovingButtons';
 import { socket } from "#App" 
 
+
 type PropsT = {
 
 }
@@ -131,6 +132,7 @@ const Menu: React.FC<PropsT> = () => {
                       text={'join to game'}
                       status={false}
                       typeMessage={Modal_message_types_E.ADDTOGAME}
+                      func={socket.deleteGame}
                     />
                   </div>
                 </MovingButtons>

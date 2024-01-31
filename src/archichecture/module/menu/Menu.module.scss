@@ -64,12 +64,14 @@
     left: auto;
     right: 0;
     width: 20rem;
-    height: 80%;
+    height: 75%;
     background-color: transparent;
     transition: 0s;
     transition-delay: 0;
-    border: 1px solid $lineMenu_1; // development
+    border: none; // development
     z-index: 3;
+    border: 2px solid $gridCollor;
+    border-radius: .5rem;
   }
 
 .burgerPosition{

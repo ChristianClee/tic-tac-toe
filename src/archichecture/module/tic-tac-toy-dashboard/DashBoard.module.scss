@@ -1,16 +1,17 @@
 @import '#main-styles/variables.scss';
+@import '#main-styles/colorVariables';
 
 .wrapper{
   width: 100%;
+  max-width: 35rem;
   min-height: 5rem;
   color: wheat;
   display: flex;
-  // flex-direction: column;
   align-items: center;
   gap: 1rem;
-  border: 1px dashed white;
   position: relative;
   order: 1;
+  // border: 1px solid black
 }
 
 .burgerPosition{
@@ -23,8 +24,13 @@
 .scope{
   position: relative;
   min-width: 4rem;
-  height: 4rem;
-  border: 1px dashed white;
+  height: 4.5rem;
+  border: 2px solid $gridCollor;
+  border-radius: .5rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
@@ -32,19 +38,20 @@
   .wrapper{
     position: absolute;
     top: 0;
-    left: 4rem;
+    left: 2.8rem;
 
 
     order: 2;
     width: auto;
     min-height: 5rem;
     color: wheat;
-    display: inline-flex;
-    align-items: center;
-    gap: 1rem;
-    border: 1px dashed white;
-    
+    border: 2px solid $gridCollor;
+    border-radius: .5rem;
   }
+  .scope{
+    border:none
+  }
+
   .burgerPosition{
     display: none;
   }

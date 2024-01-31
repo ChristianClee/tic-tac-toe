@@ -1,0 +1,36 @@
+@import "#main-styles/colorVariables";
+.wrapper {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  width: 4rem;
+  height: 3rem;
+  background: $interactiveModalMessage;
+  border-radius: 0.5rem;
+  z-index: 3;
+  border: 2px solid black;
+  cursor: pointer;
+
+  & > * {
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(-50deg);
+  }
+}
+.wrapper:hover .one {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-15deg);
+}
+.wrapper:hover .two {
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-75deg);
+}
+
+.one {
+  top: 30%;
+}
+.two {
+  top: 70%;
+}

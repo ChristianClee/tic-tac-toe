@@ -28,9 +28,7 @@ const ListGames: React.FC<PropsT> = ({ list, func, func2, choise }) => {
             />))}
         </div>
         :
-        <p
-          style={{ fontSize: "1.5rem", color: 'red', marginTop: "5rem", padding: "0 1rem", textAlign: "center", lineHeight: "2rem" }}
-        >
+        <p className={style.reject}>
             Unfortunatualy there is no aviable games, you can create the new one
         </p>
       }

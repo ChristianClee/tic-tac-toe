@@ -15,8 +15,8 @@ import PlayerName from '#archichecture/ui/playerName/PlayerName';
 import { useCustomHook } from './customHooks';
 import { socket } from '#App';
 import { Utilits } from '#commonUtilits/utilits'
-import {ReactComponent as Lock} from '#assets/svg/cloud-lock.svg'
-import {ReactComponent as Link} from '#assets/svg/no-link.svg'
+import {ReactComponent as Lock} from '#assets/svg/halloween-skeletons.svg'
+import {ReactComponent as Link} from '#assets/svg/halloween-tombstone.svg'
 import { Game_status_E } from '#reducers/tic-tac-toe/state';
 import ConnectWallpapar from '#archichecture/component/connectWallpapar/ConnectWallpapar';
 

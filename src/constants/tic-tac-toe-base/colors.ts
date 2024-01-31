@@ -11,6 +11,7 @@ export const dark = {
   "--scopeDashdoard": "rgb(200, 200, 200)",
   "--buttonNext": "rgb(0, 166, 255)",
   "--messageIconBg": "rgb(0, 55, 55)",
+  "--interactiveModalMessage": "rgb(0, 166, 255)",
 };
 
 export const light = {
@@ -26,4 +27,5 @@ export const light = {
   "--scopeDashdoard": "rgb(10, 10, 10)",
   "--buttonNext": "rgb(155, 122, 0)",
   "--messageIconBg": "rgb(186, 186, 1)",
+  "--interactiveModalMessage": "rgb(227, 237, 92)",
 };

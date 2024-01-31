@@ -1,15 +1,26 @@
-.wrapper{
+@import "#main-styles/colorVariables";
+.wrapper {
   width: 100%;
-  padding: .5rem .5rem;
+  padding: 0.3rem 0.3rem;
   min-height: 9rem;
   max-height: 15rem;
   // background: rgb(143, 116, 116);
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
   // overflow-y: scroll;
   border: 1px solid black;
+}
+
+.reject {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 5rem;
+  color: $lineMenu_1;
 }
 .wrapper::-webkit-scrollbar {
   width: 0px; /* Ширина всего элемента навигации */

@@ -1,13 +1,14 @@
+@import "#main-styles/colorVariables";
 $heightField: 3rem;
 
-.wrapper{
+.wrapper {
   position: relative;
   width: 100%;
-  border: 1px solid black;
-  border-radius: .5rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
   height: $heightField;
 }
-.nameGame{
+.nameGame {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -21,23 +22,23 @@ $heightField: 3rem;
   padding: 0 1rem;
   overflow: hidden;
 
-  &:focus~label{
+  &:focus ~ label {
     top: -10%;
   }
-  &:valid~label{
+  &:valid ~ label {
     top: -10%;
   }
 }
 
-.label{
-  padding: 0 .5rem;
+.label {
+  padding: 0 0.5rem;
   position: absolute;
-  left: .5rem;
+  left: 0.5rem;
   top: 50%;
   z-index: 2;
   font-size: 1.5rem;
   transform: translateY(-50%);
-  transition: .5s;
+  transition: 0.5s;
   color: gray;
-  background-color: white;
+  background-color: $interactiveModalMessage;
 }

@@ -1,24 +1,25 @@
-@import '#main-styles/colorVariables';
+@import "#main-styles/colorVariables";
 
-.interactiveGame{
+.interactiveGame {
   position: absolute;
-  bottom:0;
+  bottom: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: $bgcolor; 
-  // background-color: rgba(200, 200, 200, 0.853); 
-
+  background-color: $bgcolor;
+  border: 2px solid $gridCollor;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  // background-color: rgba(200, 200, 200, 0.853);
 
   line-height: 2rem;
   letter-spacing: 1px;
   // transition: background-color .5s;
 }
 
-.reject{
+.reject {
   margin-top: 20%;
   font-size: 1.5rem;
   text-align: center;
   color: $lineMenu;
 }
-
