@@ -1,18 +1,17 @@
 @import "#main-styles/colorVariables";
 .wrapper {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0.5rem;
-  // background-color: rgb(217, 187, 15);
+  background-color: $awailbleGame;
   font-size: 1.3rem;
   cursor: pointer;
 }
 
 .active {
-  // background-color: $messageIconBg;
   background-color: $messageIconBg;
   & .gameName {
     color: $scopeDashdoard;

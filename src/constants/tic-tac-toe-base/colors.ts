@@ -12,6 +12,7 @@ export const dark = {
   "--buttonNext": "rgb(0, 166, 255)",
   "--messageIconBg": "rgb(0, 55, 55)",
   "--interactiveModalMessage": "rgb(0, 166, 255)",
+  "--awailbleGame": "rgb(174, 234, 236)",
 };
 
 export const light = {
@@ -26,6 +27,7 @@ export const light = {
   "--inscriptDashdoard": "rgb(155, 122, 0)",
   "--scopeDashdoard": "rgb(10, 10, 10)",
   "--buttonNext": "rgb(155, 122, 0)",
-  "--messageIconBg": "rgb(186, 186, 1)",
+  "--messageIconBg": "rgb(190, 180, 0)",
   "--interactiveModalMessage": "rgb(227, 237, 92)",
+  "--awailbleGame":  "rgb(250, 232, 150)",
 };

@@ -12,6 +12,7 @@ import {
 import {useCustomHook} from './useCustomHook'
 import TheNull from '#archichecture/ui/theNull/TheNull';
 import TheChest from '#archichecture/ui/theChest/TheChest';
+import {ReactComponent as Scull} from '#assets/svg/halloween-skull.svg'
 
 type Props = {
 
@@ -35,27 +36,38 @@ const DashBoard: React.FC<Props> = () => {
         <Burger isBurger={commonState.burgerState} color={'dashboard'} />
       </div>
       
-      
-      {/* <ChoiceMode/> */}
-      
-      <div className={style.scope}>
-        <Player name={names[0]} scope={state.scope.cross} />
-        <Player name={names[1]} scope={state.scope.zerro}/>
-      </div>
+    
+      {
+        (!!names[0] && !!names[1])?
+        <>
+          <div className={style.scope}>
+            <Player name={names[0]} scope={state.scope.cross} />
+            <Player name={names[1]} scope={state.scope.zerro}/>
+          </div>
+          <div className={style.scope}>
+            {
+              state.typeMarker
+                ? 
+                <TheChest moving={false} />
+                :
+                <TheNull moving={false}/>
+            }
+          </div>
+        </>
+          :
+        <>
+          <div className={style.scope}>
+            <Scull className={style.scull} />
+          </div>
+          <div className={style.scope}>
+            <Scull className={style.scull}/>
+          </div>
+        </>
 
-      <div className={style.scope}>
-        {
-          state.typeMarker
-            ? 
-            <TheChest moving={false} />
-            :
-            <TheNull moving={false}/>
-        }
-      </div>
-
-      {/* <div className={style.buttons}>
-        <Button_1 text={'reset'} />
-      </div> */}
+      }
+      
+      
+      
       
     </div>
   );

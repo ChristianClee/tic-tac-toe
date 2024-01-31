@@ -1,9 +1,8 @@
 @import "#main-styles/colorVariables";
 .wrapper {
   width: 100%;
-  padding: 0.3rem 0.3rem;
   min-height: 9rem;
-  max-height: 15rem;
+  max-height: 10rem;
   // background: rgb(143, 116, 116);
   overflow-y: scroll;
   display: flex;
@@ -11,7 +10,7 @@
   gap: 0.5rem;
   border-radius: 0.5rem;
   // overflow-y: scroll;
-  border: 1px solid black;
+  
 }
 
 .reject {
@@ -20,7 +19,7 @@
   text-align: center;
   letter-spacing: 1px;
   margin-top: 5rem;
-  color: $lineMenu_1;
+  color: black;
 }
 .wrapper::-webkit-scrollbar {
   width: 0px; /* Ширина всего элемента навигации */

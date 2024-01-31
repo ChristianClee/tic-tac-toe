@@ -22,18 +22,30 @@ const MessageAddToGame: React.FC<PropsT> = () => {
     {
       gameName: "new super game",
       gameStatus: Game_status_E.WAITING,
-      time: "22:20",
+      time: "22:20:12",
       _id: "1232132134431"
     },
     {
       gameName: "new super game",
       gameStatus: Game_status_E.WAITING,
-      time: "22:20",
+      time: "22:20:12",
       _id: "12d32132134aa1"
+    },
+    {
+      gameName: "new super game",
+      gameStatus: Game_status_E.WAITING,
+      time: "22:20:12",
+      _id: "12d321as32134aa1"
+    },
+    {
+      gameName: "new super game",
+      gameStatus: Game_status_E.WAITING,
+      time: "22:20:12",
+      _id: "12ds21as32134aa1"
     },
   ]
   const [stileBtn, setStileBtn] = useState<boolean>(false)
-  const [gamesServer, setGamesServer] = useState<ListElem_I[]>([])
+  const [gamesServer, setGamesServer] = useState<ListElem_I[]>(a)
   const [namePlayer, setNamePlayer] = useState<string>('')
   const [choise, setChoise] = useState<string>('')
 

@@ -25,9 +25,9 @@ const ListElement: React.FC<PropsT> = ({ elem, func, func2, choise }) => {
       onClick={onclick}
     >
       <p className={style.gameName}>
-        <span>
+        {/* <span>
           Game:
-        </span>
+        </span> */}
         {[" ",elem.gameName].join(' ')}
       </p>
       <p className={style.time}>{elem.time}</p>
