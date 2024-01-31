@@ -5,7 +5,7 @@ export const dark = {
   "--flishingSell": "rgb(175, 175, 175)",
   "--hoverSell": "rgb(255, 202, 243)",
   "--lineMenu": "rgb(0, 166, 255)",
-  "--lineMenu_1": "rgb(0, 0, 0)",
+  "--lineMenu_1": "rgb(250, 250, 250)",
   "--sellMenu": "rgb(10,10,10)",
   "--inscriptDashdoard": "rgb(0, 166, 255)",
   "--scopeDashdoard": "rgb(200, 200, 200)",

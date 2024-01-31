@@ -1,0 +1,68 @@
+@import '#main-styles/variables'; 
+@import "#main-styles/colorVariables";
+.wrapper{
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+  z-index: 6;
+}
+.active{
+  display: flex;
+}
+
+
+.message{
+  position: relative;
+  width: 90%;
+  border-radius: .5rem;
+  border: 1px solid black;
+  background-color: $interactiveModalMessage;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.title{
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  align-self: center;
+  margin-bottom: 3rem;
+}
+.list{
+  font-size: 1.4rem;
+ }
+.par{
+  font-size: 1.2rem;
+}
+.comment{
+  font-size: 1.2rem;
+}
+
+@media(
+  min-width:$S){
+  .wrapper{
+    align-items: none;
+    justify-content: none;
+}
+  .active{
+    display: block;
+  }
+
+.message{
+  position: absolute;
+  bottom: 3rem;
+  right:  50%;
+  margin: 0 auto;
+  max-width: 60rem; 
+  transform: translateX(50%);
+
+}
+  }

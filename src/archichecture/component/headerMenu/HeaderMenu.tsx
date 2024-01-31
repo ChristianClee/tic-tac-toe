@@ -30,7 +30,7 @@ const HeaderMenu: React.FC<PropsT> = () => {
       <div
         className={second ? [style.link, style.activeLink].join(' ') : style.link}
         onClick={() => onclick(MenuLink_E.INTERACTIVEGAME)}
-      >Interractive game</div>
+      >Opponent</div>
     </div>
   );
 }

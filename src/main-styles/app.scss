@@ -11,31 +11,33 @@ html{
   /* min-height: 100vh; */
 }
 
-
-
-
-
 .App{
   // background-color: rgb(199, 185, 167);
   background-color: $bgcolor;
   min-height: 100vh;
   margin: 0 auto;
   width: 100%;
-  padding-top: 1px;
   transition: .5s;
-  padding: 1rem 1rem;
+  padding: 0 .5rem;
+  // background-color: $active-buttons;
+  display: flex;
+  flex-direction: column;
 }
-.header{
-  // border: 1px solid black;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 .header{
   width: 100%;
-  max-width: 35rem;
+  max-width: 50rem;
+  height: $headerHeight;
+  position: relative;
+  margin: 0 auto;
 }
-
+.main{
+  flex-grow: 1;
+  flex: 1 0 100%;
+  position: relative;
+}
+.footer{
+  // flex: 0 1 100%;
+}
 
 
 
@@ -45,8 +47,7 @@ html{
     font-size: 110%;
   }
   .header{
-  // border: 1px solid black;
-  max-width: 900px;
-  margin: 0 auto;
+  
+  
 }
 }

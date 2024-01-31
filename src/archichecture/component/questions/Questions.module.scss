@@ -1,0 +1,22 @@
+@import "#main-styles/colorVariables";
+.wrapper{
+  // background-color: rgba(103, 24, 24, 0.406);
+  height: 3rem;
+  position: relative;
+  
+}
+.question{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 4rem;
+  height: 2.3rem;
+  fill: $zerroFigure;
+  cursor: pointer;
+  &:hover{
+    fill: $hoverSell;
+  }
+}
+
+

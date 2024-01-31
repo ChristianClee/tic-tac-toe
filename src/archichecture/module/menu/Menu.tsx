@@ -20,6 +20,7 @@ import Button_3 from '#archichecture/ui/button_3/Button_3';
 import ModalGameHuman from '#archichecture/module/modal-game-human/ModalGameHuman';
 import MovingButtons from '#archichecture/component/movingButtons/MovingButtons';
 import { socket } from "#App" 
+import { ActionCommon_E } from '#reducers/common/actions';
 
 
 type PropsT = {
@@ -29,7 +30,7 @@ const Menu: React.FC<PropsT> = () => {
   const { state, dispatch } = useContext(CommonContext)
   const { state: state_game, dispatch: dispatch_game } = useContext(GameContext)
   const humanStyle = state_game.modeGame === Tic_tac_opponent_E.HUMAN
-
+  // const [wraphihe, setWraphihe] = useState()
   
   const sizeRef = useRef<boolean>(false)
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -73,85 +74,92 @@ const Menu: React.FC<PropsT> = () => {
 
 
   return (
-    <div
-      className={state.burgerState ?
-        [style.wrapper, style.activeWrap ].join(' ')
-        :
-        style.wrapper}
-      ref = {wrapRef}
-    >
-
-      <HeaderMenu/>
-
-      {
-        (state_game.menuLink === MenuLink_E.GAMEMODE || size) &&
-        <div className={style.choise}>
-          <RadioInput
-            text={"3 to 3"}
-            index={Tic_tac_modes_E.ONE}
-            modeGame={state_game.currentGame}
-            func={socket.deleteGame}
-          />
-          <RadioInput
-            text={"5 to 5"}
-            index={Tic_tac_modes_E.TWO}
-            modeGame={state_game.currentGame}
-            func={socket.deleteGame}
-          />
-        </div>
-      }
-      {
-        (state_game.menuLink === MenuLink_E.INTERACTIVEGAME || size) &&
-          <>
-            <div className={style.choise}>
-              <RadioInput
-                text={"no opponent"}
-                index={Tic_tac_opponent_E.NOLINK}
-                modeGame={state_game.modeGame}
-                func={socket.deleteGame}
-              /> 
-              <RadioInput
-                text={"against to computer"}
-                index={Tic_tac_opponent_E.COMPUTER}
-                modeGame={state_game.modeGame}
-                func={socket.deleteGame}
-              /> 
-              <RadioInput
-                text={"against to user"}
-                index={Tic_tac_opponent_E.HUMAN}
-                modeGame={state_game.modeGame}
-              /> 
-              {
-                <MovingButtons myIn={humanStyle}>
-                  <div className={style.connectBlock}>
-                    <Button_3
-                      text={'create new game'}
-                      status={false}
-                      typeMessage={Modal_message_types_E.CREATEGAME} />
-                    <Button_3
-                      text={'join to game'}
-                      status={false}
-                      typeMessage={Modal_message_types_E.ADDTOGAME}
-                      func={socket.deleteGame}
-                    />
-                  </div>
-                </MovingButtons>
-
-              }
-              
-            </div>
-          </>     
-      }
+    <>
+      <div
+        className={state.burgerState ?
+          [style.wrapper, style.activeWrap ].join(' ')
+          :
+          style.wrapper}
+        ref = {wrapRef}
+      >
       
+        <HeaderMenu/>
+        {
+          (state_game.menuLink === MenuLink_E.GAMEMODE || size) &&
+          <div className={style.choise}>
+            <RadioInput
+              text={"3 to 3"}
+              index={Tic_tac_modes_E.ONE}
+              modeGame={state_game.currentGame}
+              func={socket.deleteGame}
+            />
+            <RadioInput
+              text={"5 to 5"}
+              index={Tic_tac_modes_E.TWO}
+              modeGame={state_game.currentGame}
+              func={socket.deleteGame}
+            />
+          </div>
+        }
+        {
+          (state_game.menuLink === MenuLink_E.INTERACTIVEGAME || size) &&
+            <>
+              <div className={style.choise}>
+                <RadioInput
+                  text={"no opponent"}
+                  index={Tic_tac_opponent_E.NOLINK}
+                  modeGame={state_game.modeGame}
+                  func={socket.deleteGame}
+                /> 
+                <RadioInput
+                  text={"computer"}
+                  index={Tic_tac_opponent_E.COMPUTER}
+                  modeGame={state_game.modeGame}
+                  func={socket.deleteGame}
+                /> 
+                <RadioInput
+                  text={"user"}
+                  index={Tic_tac_opponent_E.HUMAN}
+                  modeGame={state_game.modeGame}
+                /> 
+                {
+                  <MovingButtons myIn={humanStyle}>
+                    <div className={style.connectBlock}>
+                      <Button_3
+                        text={'create new game'}
+                        status={false}
+                        typeMessage={Modal_message_types_E.CREATEGAME} />
+                      <Button_3
+                        text={'join to game'}
+                        status={false}
+                        typeMessage={Modal_message_types_E.ADDTOGAME}
+                        func={socket.deleteGame}
+                      />
+                    </div>
+                  </MovingButtons>
 
-      <div className={style.burgerPosition}>
-        <Burger isBurger={!state.burgerState} color={'menu'} />
+                }
+                
+              </div>
+            </>     
+        }
+        <div className={style.burgerPosition}>
+          <Burger isBurger={!state.burgerState} color={'menu'} />
+        </div>
+
       </div>
 
+      <div className={state.burgerState? [style.wrapHihe, style.activeHide].join(' ') : style.wrapHihe}
+        onClick={() => {
+          console.log(state.burgerState)
+          dispatch({
+            type: ActionCommon_E.TuggleBurger,
+          })
+        }}
+      >
+      </div> 
+   </>
 
-
-
-    </div>
   );
 }
 export default Menu;

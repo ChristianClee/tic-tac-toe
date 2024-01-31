@@ -11,6 +11,7 @@ import Menu from '#archichecture/module/menu/Menu';
 import ModalGameHuman from '#archichecture/module/modal-game-human/ModalGameHuman';
 import { socket } from '#App'
 import { Session_st_E, Tic_tac_opponent_E } from "#constants/tic-tac-toe-base/constNames";
+import Questions from '#archichecture/component/questions/Questions';
 
 
 
@@ -20,17 +21,21 @@ const Table_page: React.FC = () => {
 
 
   return (
-    <GameContext.Provider value={{state, dispatch}}>
+    <GameContext.Provider value={{ state, dispatch }}>
       <div className={style.wrapper}>
-        <div className={style.flexCont}>
-          <TicTacToeAll />
-          
-          <DashBoard />
-          <Menu />
-          <ModalGameHuman />
-          
+        <div className={style.body}>
+          <div className={style.flexCont}>
+            <TicTacToeAll />
+            
+            <DashBoard />
+            <Menu />
+            <ModalGameHuman />
+            
+          </div>
         </div>
+        <Questions/>
       </div>
+      
       
     </GameContext.Provider>
   );

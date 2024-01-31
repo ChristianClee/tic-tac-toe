@@ -4,6 +4,7 @@ export enum ActionCommon_E {
   TuggleBurger,
   CloseBurger,
   TuggleLightDarkThemes,
+  TuggleModalWindow,
 }
 
 export interface TuggleBurger_I {
@@ -18,7 +19,12 @@ export interface TuggleLightDarkThemes_I {
   payload: Light_dark_themes_E;
 }
 
+export interface TuggleModalWindow_I {
+  type: ActionCommon_E.TuggleModalWindow;
+}
+
 export type CommonActions_T =
-  TuggleBurger_I
+  | TuggleBurger_I
   | CloseBurger_I
   | TuggleLightDarkThemes_I
+  | TuggleModalWindow_I

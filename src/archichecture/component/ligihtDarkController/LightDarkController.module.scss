@@ -3,11 +3,12 @@ $sizeToggle: $itemHight - .25rem;
 $itemAssideGap: .15rem;
 
 .wrapper{
-  width: 100%;
-  // background-color: #cacaca;
-  // margin-top: .5rem;
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: auto;
+  height: auto;
+  transform: translateY(-50%);
 }
 
 .colorLabel{

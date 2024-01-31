@@ -21,6 +21,12 @@ export function CommonReduser(state: Common_I, action: CommonActions_T) {
         ...state,
         lightDarkTheme: action.payload,
       };
+    
+    case ActionCommon_E.TuggleModalWindow:
+      return {
+        ...state,
+        modalWindow: !state.modalWindow,
+      };
 
     default:
       return state;

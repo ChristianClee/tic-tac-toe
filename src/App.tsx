@@ -10,6 +10,7 @@ import { Light_dark_themes_E } from '#constants/common-base/constNames'
 import { dark, light } from '#constants/colors'
 import { Session_st_E } from "#constants/tic-tac-toe-base/constNames";
 import { WebSocketInit } from '#commonUtilits/websocket';
+import CommonModal from '#archichecture/component/comonModal/CommonModal';
 
 
 export const socket = new WebSocketInit()
@@ -33,8 +34,14 @@ const App: React.FC = () => {
         <header className='header'>
           <LightDarkController/>
         </header>
-        <Table_page/>
+        <main className='main'>
+          <Table_page />
+        </main>
+        <footer className='footer'>
+          
+        </footer>
         {/* <Background/> */}
+        <CommonModal/>
       </div>
     </CommonContext.Provider>
   );

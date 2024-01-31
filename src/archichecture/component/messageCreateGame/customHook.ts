@@ -13,6 +13,13 @@ export function useCustomHook(): CreateGame_T {
     noWinner,
     winnerCombination,
   } = state;
+    
+  const cleanSells = sells.map(item => {
+    const index = item.index
+    const key = item.key
+    const type = null
+    return { index, key, type};
+  })
 
   const options = {
     _id: null,
@@ -21,7 +28,7 @@ export function useCustomHook(): CreateGame_T {
     playerTwo: null,
     playerOneName: optionsOneToOne.playerOneName,
     playerTwoName: optionsOneToOne.playerTwoName,
-    sells,
+    sells:cleanSells,
     typeMarker,
     gameStatus: optionsOneToOne.gameStatus,
     currentGame,
