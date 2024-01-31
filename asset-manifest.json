@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/tic-tac-toe/static/css/main.2a92977f.css",
-    "main.js": "/tic-tac-toe/static/js/main.d1fa6b32.js",
+    "main.css": "/tic-tac-toe/static/css/main.b4e795ce.css",
+    "main.js": "/tic-tac-toe/static/js/main.2a069dca.js",
+    "static/media/halloween-skeletons.svg": "/tic-tac-toe/static/media/halloween-skeletons.46fc528c78c8e3bb03f71bdba193849e.svg",
+    "static/media/halloween-tombstone.svg": "/tic-tac-toe/static/media/halloween-tombstone.6030ca18b7c7bc490d1237cfb0706a68.svg",
     "static/media/cross-of-bones.svg": "/tic-tac-toe/static/media/cross-of-bones.aa3ad5d2107e883cf216166e893fc007.svg",
     "static/media/null-pumkin.svg": "/tic-tac-toe/static/media/null-pumkin.92227409baf0427523b03cee484222f2.svg",
+    "static/media/bone.svg": "/tic-tac-toe/static/media/bone.32578bb22116c4ccec8204cb32bead61.svg",
     "static/media/crown.svg": "/tic-tac-toe/static/media/crown.622dbc8f5ceef0b5408f0b6d77e0713f.svg",
     "index.html": "/tic-tac-toe/index.html",
-    "main.2a92977f.css.map": "/tic-tac-toe/static/css/main.2a92977f.css.map",
-    "main.d1fa6b32.js.map": "/tic-tac-toe/static/js/main.d1fa6b32.js.map"
+    "main.b4e795ce.css.map": "/tic-tac-toe/static/css/main.b4e795ce.css.map",
+    "main.2a069dca.js.map": "/tic-tac-toe/static/js/main.2a069dca.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a92977f.css",
-    "static/js/main.d1fa6b32.js"
+    "static/css/main.b4e795ce.css",
+    "static/js/main.2a069dca.js"
   ]
 }
